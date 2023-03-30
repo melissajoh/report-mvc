@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>Om kursen MVC</h1>
+    <div class="container">
+        <div class="row">
+        <div class="col-8">
+        <img src="{{ asset('img/mvc.png') }}" class="img-fluid my-3" alt="mvc">
+            <p>Kursen Objektorienterade webbteknologier (MVC) fokuserar på objektorienterade 
+            programmeringstekniker i programmeringsspråket PHP. Klassiska objektorienterade 
+            konstruktioner hanteras tillsammans med objektorienterad programmering i webbaserat 
+            ramverk tillsammans med databaser samt enhetstestning.</p>
+        </div>
+        <div class="col-4">
+            <h2>Github</h2>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="https://github.com/dbwebb-se/mvc/">Kursens github</a></li>
+            <li class="list-group-item"><a href="https://github.com/melissajoh">Min github</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    {# <a href="{{ asset('img/glider.svg') }}">
+        <img src="{{ asset('img/glider.svg') }}" alt="">
+    </a> #}
+{% endblock %}
