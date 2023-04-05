@@ -42,8 +42,8 @@ class MainController extends AbstractController
     // #[Route("/api/quote", name: "quote")]
     // public function jsonNumber(): Response
     // {
-    //     $quotes = array("When life throws you a rainy day, play in the puddles", 
-    //     "Whatever you do, always give 100%. Unless you are donating blood.", 
+    //     $quotes = array("When life throws you a rainy day, play in the puddles",
+    //     "Whatever you do, always give 100%. Unless you are donating blood.",
     //     "If you think you are too small to make a difference, try sleeping
     //     with a mosquito.");
     //     $number = random_int(0, count($quotes)-1);
