@@ -6,7 +6,7 @@
     <h1>Card deck</h1>
     <div>
         {% for card in deck %}
-            <span class="cards">{{ card }}</span>
+            <span class="cards {{card | raw}}">{{ card }}</span>
         {% endfor %}
     </div>
 {% endblock %}

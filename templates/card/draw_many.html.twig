@@ -6,7 +6,7 @@
     <h1>Draw card</h1>
     <div>
         {% for card in cardsDrawn %}
-            <span class="cards">{{ card }}</span>
+            <span class="cards {{ card }}">{{ card }}</span>
         {% endfor %}
         <p>Cards left in deck: {{ count }}</p>
     </div>

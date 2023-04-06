@@ -6,7 +6,7 @@
     <h1>Shuffled card deck</h1>
     <div>
         {% for card in shuffled %}
-            <span class="cards">{{ card }}</span>
+            <span class="cards {{ card }}">{{ card }}</span>
         {% endfor %}
     </div>
 {% endblock %}
