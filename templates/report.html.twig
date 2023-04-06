@@ -38,6 +38,43 @@ och grund i hur man jobbar med klasser och objekt i PHP.
 </pre>
 
 <h2 id="kmom02">Kmom02</h2>
+<pre>
+Arv innebär att en klass ärver av en annan klass, dvs den får samma publika 
+delar som klassen den ärver av. Klassen som ärver kan sedan innehålla egna 
+metoder eller skriva över metoder från basklassen. Komposition innebär att 
+en klass använder sig av en annan klass. Som för våra kort, där en korthand 
+eller kortlek använder sig av kort. Ett interface är som ett kontrakt där en 
+klass lovar att innehålla vissa metoder. Interface innehåller ingen kod som en 
+klass kan använda, utan enbart löfte om vilka metoder som ska finnas. Trait är 
+återanvändbara delar kod som kan användas i olika klasser.
+
+Jag löste uppgiften med hjälp av fyra klasser. Card, CardGraphic, CardHand och DeckOfCards. 
+I Card skapas kort som ska ha ett värde mellan 0-51 (52 kort i en kortlek). Jag 
+har där en metod som initierar korten genom att ett nummer skickas till metoden. 
+Där kort används kan de alltså initieras genom antingen ett slumpmässigt värde mellan 
+0-51 eller genom att loopa igenom alla siffrorna för att få fram alla korten. CardGraphic 
+gör korten till bilder (unicode) av kort istället för enbart siffror.
+
+Jag har sedan använt DeckOfCards för att få fram en kortlek, kunna blanda den, ta bort 
+kort från den osv. I CardHand tar jag fram en korthand till routen deck/draw/:number 
+genom metoden draw.
+
+Överlag känner jag att min lösning på uppgiften blev ganska rörig. Nog för att jag blev 
+lite förvirrad över hur jag skulle lösa allting. Jag är inte jättenöjd. Vad jag märkt så 
+fungerar allt som det ska, men jag känner mig lite osäker på om min kod håller för 
+fortsättning i kommande kursmoment.
+
+För att lösa routen “draw” skapade jag en metod draw i DeckOfCards som tar fram ett kort 
+som dras och tas bort ur leken. Men för routen “draw/:number” använder jag istället en 
+ytterligare “draw”-metod men i klassen CardHand, som i sin tur tar ett DeckOfCards-objekt 
+som argument. För att ta bort korten anropas en ytterligare metod i DeckOfCards. Det känns 
+som att det hade kunnat gå att använda samma draw-metod för dessa två. Men av någon anledning 
+gjorde jag två olika och lyckades inte riktigt få ihop dem till en när jag försökte nu. Men 
+det skulle vara en förbättring.
+
+TIL för detta kursmoment är lite inledande information om för mig nya konstruktionerna 
+interface och trait. Att jobba med klasser och sessioner i PHP.
+</pre>
 
 <h2 id="kmom03">Kmom03</h2>
 
