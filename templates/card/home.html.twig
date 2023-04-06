@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card game{% endblock %}
+
+{% block body %}
+    <h1>Card game</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <p>
+                    Jag har använt mig av klasserna Card, CardGraphic, CardHand och DeckOfCards.
+                    CardGraphic ärver av klassen Card. Komposition finns mellan klassen Card och
+                    CardHand, samt Card och DeckOfCards.
+                </p>
+                <img src="{{ asset('img/cards.png') }}" alt="UML diagram for card classes">
+            </div>
+            <div class="col-6">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="{{ path('card_deck') }}">Deck</a></li>
+                    <li class="list-group-item"><a href="{{ path('card_shuffle') }}">Shuffle</a></li>
+                    <li class="list-group-item"><a href="{{ path('card_draw') }}">Draw</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
