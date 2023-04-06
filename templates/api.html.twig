@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Routes{% endblock %}
+
+{% block body %}
+    <h1>Sammanställning av routes</h1>
+    <div>
+        <div>
+            <p><a href="{{ path('quote') }}">api/quotes</a>: Route som visar dagens quote, dagens datum och tidsstämpel</p>
+        </div>
+
+        <div>
+            <p><a href="{{ path('deck') }}">api/deck</a>: Route som returnerar JSON-struktur med sorterad kortlek</p>
+        </div>
+
+        <div>
+            <p><a href="{{ path('shuffle') }}">api/deck/shuffle</a>: Route som returnerar blandad kortlek</p>
+        </div>
+
+        <div>
+            <p><a href="{{ path('draw') }}">api/deck/draw</a>: Route där 1 kort dras från kortleken</p>
+        </div>
+
+        <div>
+            <p><a href="{{ 'api/deck/draw/3' }}">api/deck/draw/:number</a>: Route där :number kort dras från kortleken</p>
+        </div>
+    </div>
+{% endblock %}
