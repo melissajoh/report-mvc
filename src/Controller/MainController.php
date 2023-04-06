@@ -39,27 +39,9 @@ class MainController extends AbstractController
         return $this->render('lucky.html.twig', $data);
     }
 
-    // #[Route("/api/quote", name: "quote")]
-    // public function jsonNumber(): Response
-    // {
-    //     $quotes = array("When life throws you a rainy day, play in the puddles",
-    //     "Whatever you do, always give 100%. Unless you are donating blood.",
-    //     "If you think you are too small to make a difference, try sleeping
-    //     with a mosquito.");
-    //     $number = random_int(0, count($quotes)-1);
-    //     $date = date('d-m-Y');
-    //     $timestamp = time();
-
-    //     $data = [
-    //         'quote' => $quotes[$number],
-    //         'date' => $date,
-    //         'timestamp' => $timestamp,
-    //     ];
-
-    //     $response = new JsonResponse($data);
-    //     $response->setEncodingOptions(
-    //         $response->getEncodingOptions() | JSON_PRETTY_PRINT
-    //     );
-    //     return $response;
-    // }
+    #[Route("/api", name: "api")]
+    public function api(): Response
+    {
+        return $this->render('api.html.twig');
+    }
 }
