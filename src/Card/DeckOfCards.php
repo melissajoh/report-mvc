@@ -10,15 +10,15 @@ namespace App\Card;
 class DeckOfCards
 {
     /**
-     * @var array holding cards
+     * @var array<string> holding cards
      */
     private $deck = [];
     // private $cardDeck = [];
 
     /**
      * Method initiating deck with cards
-     * @param Card to add to deck
-     * @return array with cards in deck
+     * @param Card $card to add to deck
+     * @return array<string> with cards in deck
      */
     public function initDeck(Card $card): array
     {
@@ -31,7 +31,7 @@ class DeckOfCards
 
     /**
      * Shuffle cards in deck
-     * @return array with shuffled deck
+     * @return array<string> with shuffled deck
      */
     public function shuffleDeck(): array
     {
@@ -41,7 +41,7 @@ class DeckOfCards
 
     /**
      * Draw one card from deck
-     * @return string with drawn card
+     * @return string drawn card
      */
     public function draw(): string
     {
@@ -66,7 +66,7 @@ class DeckOfCards
 
     /**
      * Get cards
-     * @return array with string representations of cards from deck
+     * @return array<string> with string representations of cards from deck
      */
     public function getCards(): array
     {
@@ -75,7 +75,7 @@ class DeckOfCards
 
     /**
      * Remove card from deck
-     * @param array of cards to remove
+     * @param array<integer> $cards of cards to remove
      */
     public function removeCards(array $cards): void
     {

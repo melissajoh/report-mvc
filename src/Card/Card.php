@@ -10,7 +10,7 @@ class Card
     /**
      * @var int $value Value of card
      */
-    protected $value;
+    protected int | null $value;
 
     /**
      * Constructor initiating card with null value
@@ -33,9 +33,9 @@ class Card
 
     /**
      * Get value of card
-     * @return int value of card as integer
+     * @return int|null value of card as integer
      */
-    public function getValue(): int
+    public function getValue(): int|null
     {
         return $this->value;
     }

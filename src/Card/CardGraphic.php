@@ -8,7 +8,7 @@ namespace App\Card;
 class CardGraphic extends Card
 {
     /**
-     * @var array $representation Unicode characters representing playing cards
+     * @var array<string> $representation Unicode characters representing playing cards
      */
     private $representation = [
         '🂡',

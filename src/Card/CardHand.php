@@ -10,13 +10,13 @@ namespace App\Card;
 class CardHand
 {
     /**
-     * @var array $hand holding cards
+     * @var array<Card> $hand holding cards
      */
     private $hand = [];
 
     /**
      * Add cards to hand
-     * @param Card to add
+     * @param Card $card to add
      */
     public function add(Card $card): void
     {
@@ -25,14 +25,14 @@ class CardHand
 
     /**
      * Draw a hand from deck
-     * @param DeckOfCards deck to draw hand from
+     * @param DeckOfCards $deck to draw hand from
      */
     public function draw(DeckOfCards $deck): void
     {
         $cards = $deck->getCards();
         foreach ($this->hand as $c) {
             $cardNr = array_rand($cards);
-            $c->initCard($cardNr);
+            $c->initCard((int)$cardNr);
             unset($cards[$cardNr]);
         }
     }
@@ -48,7 +48,7 @@ class CardHand
 
     /**
      * Get value of cards in hand
-     * @return array with int values of cards in hand
+     * @return array<int|null> with int values of cards in hand
      */
     public function getValues(): array
     {
@@ -61,7 +61,7 @@ class CardHand
 
     /**
      * Get each card in hand as string
-     * @return array with string values of card in hand
+     * @return array<string> with string values of card in hand
      */
     public function getString(): array
     {
