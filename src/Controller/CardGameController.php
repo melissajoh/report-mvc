@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CardGameController extends AbstractController
@@ -23,9 +24,8 @@ class CardGameController extends AbstractController
             $card = new CardGraphic();
             $deck->initDeck($card);
             $session->set("deck_of_cards", $deck);
-        } else {
-            $deck = $session->get("deck_of_cards");
         }
+        $deck = $session->get("deck_of_cards");
 
         return $this->render('card/home.html.twig');
     }
@@ -81,7 +81,7 @@ class CardGameController extends AbstractController
         $deck = $session->get("deck_of_cards");
 
         if ($num > $deck->getNrOfCards()) {
-            throw new \Exception("Deck is out of cards");
+            throw new Exception("Deck is out of cards");
         }
 
         $hand = new CardHand();
