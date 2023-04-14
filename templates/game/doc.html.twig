@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Doc för kortspel{% endblock %}
+
+{% block body %}
+    <h1>Dokumentation kortspel</h1>
+    <div class="container">
+        <div>
+            <h2>Flödesschema</h2>
+            <p>
+
+            </p>
+            <img src="{{ asset('img/flowchart.png') }}" alt="Flow chart for card game 21">
+            <h2>Pseudokod</h2>
+            <pre>
+                Start game
+                INIT game board with player and bank
+                SHOW game board for player
+                Draw one card for player
+                Add value of card to players points
+                IF player draws another card THEN
+                    WHILE player draws another card 
+                        Draw one card for player
+                        Add value of card to players points
+                    ENDWHILE
+                ELSE
+                    IF players points is over 21 THEN
+                        Bank has won
+                    ELSE
+                        WHILE bank's points are under 17
+                            Bank draws cards
+                        ENDWHILE
+                        IF bank gets over 21 points THEN
+                            Player has won
+                        ELSE
+                            Check points for bank and player
+                            IF bank has more points or both has same points THEN
+                                Bank has won
+                            ELSE
+                                Player has won
+                            ENDIF
+                        ENDIF
+                    ENDIF
+                ENDIF
+                PRINT winner and end round
+                DISPLAY button to play again
+            </pre>
+            <h2>Klasser</h2>
+            <p>
+                Player: Klass som håller spelarna och dess poäng<br>
+                GameBoard: Funktionalitet för själva kortspelet<br>
+                DeckOfCards: Klass som håller kortleken<br>
+                CardGraphic: Ger en bildrepresentation av varje kort<br>
+                CardHand: Håller alla dragna kort
+            </p>
+        </div>
+    </div>
+{% endblock %}

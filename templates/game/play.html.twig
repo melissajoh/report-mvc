@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kortspelet 21{% endblock %}
+
+{% block body %}
+    <h1>Nu spelar vi 21!</h1>
+    <div class="container">
+    <p>Du kör först, sedan är det bankens tur. Dra ett nytt kort eller välj att stanna.</p>
+        <form method="post" action="">
+            <div class="row justify-content-center">
+            {% if flash == null %}
+                <div class="col-4">
+                <input type="submit" name="draw" value="Dra kort" class="btn btn-dark mb-2"
+                    onClick="this.form.action='{{ path('game_draw') }}';">
+                </div>
+                <div class="col-4">
+                <input type="submit" name="save" value="Spara kort" class="btn btn-outline-dark"
+                    onClick="this.form.action='{{ path('game_save') }}';">
+                </div>
+            {% else %}
+                <div class="col-4">
+                <input type="submit" name="restart" value="Spela igen" class="btn btn-dark mb-2 btn-block"
+                    onClick="this.form.action='{{ path('game_rematch') }}';">
+                    {# onClick="this.form.action='{{ path('game_rematch') }}';this.form.method='get';"> #}
+                </div>
+            {% endif %}
+            </div>
+        </form>
+        {{ include('game/flash.html.twig') }}
+        {% for card in hand %}
+            <span class="drawn {{ card }}">{{ card }}</span>
+        {% endfor %}
+
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">Du har: {{ player }} poäng</div>
+                <div class="col">Banken har: {{ bank }} poäng</div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">Du har vunnit: {{ player_won }} rundor</div>
+                <div class="col">Banken har vunnit: {{ bank_won }} rundor</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

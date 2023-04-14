@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kortspel landningssida{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Kortspelet 21</h1>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-8 p-2 mt-2 text-center">
+            <p>
+                I kortspelet 21 spelar en spelare mot banken. Målet är att få ihop kort som är värda 21.
+                Överskrider värdet 21 förlorar man, underskrider värdet vinner den som är närmast 21.
+                Ess är värt 1 eller 14 beroende på vad som är mest fördelaktigt för spelaren. Knekt 11, dam 12, kung 13.
+                Resten av korten är värda sitt respektive nummer.
+            </p>
+            <p>
+                Spelaren börjar att ta kort tills denne är nöjd. Över 21 så vinner banken. När spelaren känner sig klar 
+                är det bankens tur. Banken ser inte spelarens kort. Banken plockar kort tills den stannar eller har över 21.
+                Blir det lika vinner banken, har banken över 21 eller mindre än spelaren vinner spelaren.
+            </p>
+                <a href="{{ path('game_play') }}"><button type="button" class="btn btn-success btn-block mt-5">Starta spelet</button></a>
+            </div>
+            <div class="col-2">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{{ path('game_doc') }}">Doc</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
