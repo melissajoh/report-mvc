@@ -20,9 +20,9 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response {
         if ($session->get("deck_of_cards") == null) {
-            $deck = new DeckOfCards();
             $card = new CardGraphic();
-            $deck->initDeck($card);
+            $deck = new DeckOfCards($card);
+            // $deck->initDeck($card);
             $session->set("deck_of_cards", $deck);
         }
         $deck = $session->get("deck_of_cards");
@@ -47,9 +47,9 @@ class CardGameController extends AbstractController
     public function shuffle(
         SessionInterface $session
     ): Response {
-        $deck = new DeckOfCards();
         $card = new CardGraphic();
-        $deck->initDeck($card);
+        $deck = new DeckOfCards($card);
+        // $deck->initDeck($card);
         $session->set("deck_of_cards", $deck);
         $shuffledDeck = clone $deck;
         $data = [
