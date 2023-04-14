@@ -15,19 +15,27 @@ class DeckOfCards
     private $deck = [];
     // private $cardDeck = [];
 
-    /**
-     * Method initiating deck with cards
-     * @param Card $card to add to deck
-     * @return array<string> with cards in deck
-     */
-    public function initDeck(Card $card): array
+    public function __construct(Card $card)
     {
         for ($i = 0; $i <= 51; $i++) {
             $this->deck[] = $card->initCard($i)->getAsString();
             // $this->cardDeck[] = $card->initCard($i);
         }
-        return $this->deck;
     }
+
+    // /**
+    //  * Method initiating deck with cards
+    //  * @param Card $card to add to deck
+    //  * @return DeckOfCards
+    //  */
+    // public function initDeck(Card $card): DeckOfCards
+    // {
+    //     for ($i = 0; $i <= 51; $i++) {
+    //         $this->deck[] = $card->initCard($i)->getAsString();
+    //         // $this->cardDeck[] = $card->initCard($i);
+    //     }
+    //     return $this;
+    // }
 
     /**
      * Shuffle cards in deck
