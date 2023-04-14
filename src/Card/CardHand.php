@@ -13,6 +13,10 @@ class CardHand
      * @var array<Card> $hand holding cards
      */
     private $hand = [];
+    /**
+     * @var array<string> $handString holding string representations of cards
+     */
+    private $handString = [];
 
     /**
      * Add cards to hand
@@ -21,6 +25,32 @@ class CardHand
     public function add(Card $card): void
     {
         $this->hand[] = $card;
+    }
+
+    /**
+     * Add string representation of card to hand
+     * @param string $card to add
+     */
+    public function addString(string $card): void
+    {
+        $this->handString[] = $card;
+    }
+
+    /**
+     * Get hand with string representation of cards
+     * @return array<string>
+     */
+    public function getHandString()
+    {
+        return $this->handString;
+    }
+
+    /**
+     * Clearing hand of cards
+     */
+    public function clearHand(): void
+    {
+        unset($this->handString);
     }
 
     /**
