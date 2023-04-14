@@ -18,9 +18,9 @@ class JsonCardController
         SessionInterface $session
     ): Response {
         if ($session->get("deck_of_cards") == null) {
-            $deck = new DeckOfCards();
             $card = new CardGraphic();
-            $deck->initDeck($card);
+            $deck = new DeckOfCards($card);
+            // $deck->initDeck($card);
             $session->set("deck_of_cards", $deck);
         }
         $deck = $session->get("deck_of_cards");
@@ -41,9 +41,9 @@ class JsonCardController
     public function jsonShuffle(
         SessionInterface $session
     ): Response {
-        $deck = new DeckOfCards();
         $card = new CardGraphic();
-        $deck->initDeck($card);
+        $deck = new DeckOfCards($card);
+        // $deck->initDeck($card);
         $session->set("deck_of_cards", $deck);
         $shuffledDeck = clone $deck;
         $shuffledDeck->shuffleDeck();
@@ -102,6 +102,27 @@ class JsonCardController
         $data = [
             "count" => $deck->getNrOfCards(),
             "cardsDrawn" => $hand->getString(),
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+        );
+        return $response;
+    }
+
+    #[Route("/api/game", name: "game", methods: ['GET', 'POST'])]
+    public function jsonGame(
+        SessionInterface $session
+    ): Response {
+        $game = $session->get("game");
+
+        $data = [
+            "currentHand" => $game->getHand()->getHandString(),
+            "playerPoints" => $game->getPlayer()->getScore(),
+            "playerWins" => $session->get("player_won"),
+            "bankPoints" => $game->getBank()->getScore(),
+            "bankWins" => $session->get("bank_won")
         ];
 
         $response = new JsonResponse($data);
