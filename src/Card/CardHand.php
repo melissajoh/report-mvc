@@ -2,8 +2,6 @@
 
 namespace App\Card;
 
-// use App\Card\Card;
-
 /**
  * Hand of cards
  */
@@ -47,10 +45,12 @@ class CardHand
 
     /**
      * Clearing hand of cards
+     * @return array<void>
      */
-    public function clearHand(): void
+    public function clearHand(): array
     {
         unset($this->handString);
+        return [];
     }
 
     /**
