@@ -3,7 +3,8 @@
 {% block title %}Kortspel landningssida{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Kortspelet 21</h1>
+    <h1 class="text-center gameh1"><span class="text-danger">&hearts;</span> 
+    &clubs; Kortspelet 21 &spades; <span class="text-danger">&diams;</span></h1>
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-8 p-2 mt-2 text-center">
@@ -14,11 +15,24 @@
                 Resten av korten är värda sitt respektive nummer.
             </p>
             <p>
-                Spelaren börjar att ta kort tills denne är nöjd. Över 21 så vinner banken. När spelaren känner sig klar 
-                är det bankens tur. Banken ser inte spelarens kort. Banken plockar kort tills den stannar eller har över 21.
+                Spelaren börjar att ta kort tills denne är nöjd. Över 21 så vinner banken. 21 så vinner spelaren. När spelaren känner sig klar 
+                är det bankens tur. Banken plockar kort tills den stannar eller har över 21.
                 Blir det lika vinner banken, har banken över 21 eller mindre än spelaren vinner spelaren.
             </p>
-                <a href="{{ path('game_play') }}"><button type="button" class="btn btn-success btn-block mt-5">Starta spelet</button></a>
+            <p>
+                Spelet består av rundor som fortsätter tills kortleken är slut eller tills spelaren eller banken har 0 pengar kvar.
+                Banken kan vara "dum" eller "smart", valet görs nedan.
+            </p>
+                <form method="post" action="{{ path('game_init') }}" class="text-center mt-5 form-group">
+                    <label for="bank"><b>Väl bank att spela mot:</b></label>
+                    <select id="bank" name="bank" class="form-control">
+                        <option value="dumb">Dum bank</option>
+                        <option value="smart">Smart bank</option>
+                    </select>
+                    <label for="bet"><b>Väl hur mycket du vill satsa varje runda:</b></label>
+                    <input type="number" name="bet" min="0" max="100" value="10" class="form-control">
+                    <input type="submit" name="do_it" value="Starta spelet" class="btn btn-success btn-block mt-2">
+                </form>
             </div>
             <div class="col-2">
                 <ul class="list-group list-group-flush">
