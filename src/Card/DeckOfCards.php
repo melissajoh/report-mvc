@@ -23,20 +23,6 @@ class DeckOfCards
         }
     }
 
-    // /**
-    //  * Method initiating deck with cards
-    //  * @param Card $card to add to deck
-    //  * @return DeckOfCards
-    //  */
-    // public function initDeck(Card $card): DeckOfCards
-    // {
-    //     for ($i = 0; $i <= 51; $i++) {
-    //         $this->deck[] = $card->initCard($i)->getAsString();
-    //         // $this->cardDeck[] = $card->initCard($i);
-    //     }
-    //     return $this;
-    // }
-
     /**
      * Shuffle cards in deck
      * @return array<string> with shuffled deck
@@ -53,13 +39,16 @@ class DeckOfCards
      */
     public function draw(): string
     {
-        $cardNr = array_rand($this->deck);
-        $cards = $this->deck;
-        $card = $cards[$cardNr];
+        if ($this->deck != []) {
+            $cardNr = array_rand($this->deck);
+            $cards = $this->deck;
+            $card = $cards[$cardNr];
 
-        unset($this->deck[$cardNr]);
+            unset($this->deck[$cardNr]);
 
-        return $card;
+            return $card;
+        }
+        return "";
     }
 
     /**
@@ -83,7 +72,7 @@ class DeckOfCards
 
     /**
      * Remove card from deck
-     * @param array<integer> $cards of cards to remove
+     * @param array<integer|null> $cards of cards to remove
      */
     public function removeCards(array $cards): void
     {
