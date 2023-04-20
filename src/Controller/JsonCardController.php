@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use App\Card\GameBoard;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -23,6 +24,9 @@ class JsonCardController
             // $deck->initDeck($card);
             $session->set("deck_of_cards", $deck);
         }
+        /**
+         * @var DeckOfCards Current deck
+         */
         $deck = $session->get("deck_of_cards");
 
         $data = [
@@ -63,6 +67,9 @@ class JsonCardController
     public function jsonDraw(
         SessionInterface $session
     ): Response {
+        /**
+         * @var DeckOfCards Current deck
+         */
         $deck = $session->get("deck_of_cards");
 
         $data = [
@@ -82,7 +89,9 @@ class JsonCardController
         int $num,
         SessionInterface $session
     ): Response {
-
+        /**
+         * @var DeckOfCards Current deck
+         */
         $deck = $session->get("deck_of_cards");
 
         if ($num > $deck->getNrOfCards()) {
@@ -115,14 +124,19 @@ class JsonCardController
     public function jsonGame(
         SessionInterface $session
     ): Response {
+        /**
+         * @var GameBoard Current game of 21
+         */
         $game = $session->get("game");
 
         $data = [
             "currentHand" => $game->getHand()->getHandString(),
             "playerPoints" => $game->getPlayer()->getScore(),
             "playerWins" => $session->get("player_won"),
+            "playerCurrency" => $session->get("player_currency"),
             "bankPoints" => $game->getBank()->getScore(),
-            "bankWins" => $session->get("bank_won")
+            "bankWins" => $session->get("bank_won"),
+            "bankCurrency" => $session->get("bank_currency"),
         ];
 
         $response = new JsonResponse($data);
