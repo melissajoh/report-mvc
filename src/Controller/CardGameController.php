@@ -34,6 +34,9 @@ class CardGameController extends AbstractController
     public function deck(
         SessionInterface $session
     ): Response {
+        /**
+         * @var DeckOfCards Current deck
+         */
         $deck = $session->get("deck_of_cards");
 
         $data = [
@@ -63,6 +66,9 @@ class CardGameController extends AbstractController
     public function draw(
         SessionInterface $session
     ): Response {
+        /**
+         * @var DeckOfCards Current deck
+         */
         $deck = $session->get("deck_of_cards");
         $data = [
             "draw" => $deck->draw(),
@@ -77,7 +83,9 @@ class CardGameController extends AbstractController
         int $num,
         SessionInterface $session
     ): Response {
-
+        /**
+         * @var DeckOfCards Current deck
+         */
         $deck = $session->get("deck_of_cards");
 
         if ($num > $deck->getNrOfCards()) {
