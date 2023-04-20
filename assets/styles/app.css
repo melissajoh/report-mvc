@@ -82,18 +82,81 @@ h1 {
 .🃍,
 .🃎 {
     color: red;
+    background: linear-gradient(0deg, rgba(10,176,127,1) 10%, rgba(226,246,240,1) 10%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 77%, rgba(223,245,238,1) 80%, rgba(10,176,127,1) 81%);
+}
+
+.🂡,
+.🂢,
+.🂣,
+.🂤,
+.🂥,
+.🂦,
+.🂧,
+.🂨,
+.🂩,
+.🂪,
+.🂫,
+.🂭,
+.🂮,
+.🃑,
+.🃒,
+.🃓,
+.🃔,
+.🃕,
+.🃖,
+.🃗,
+.🃘,
+.🃙,
+.🃚,
+.🃛,
+.🃝,
+.🃞 {
+    color: black;
+    background: linear-gradient(0deg, rgba(10,176,127,1) 10%, rgba(226,246,240,1) 10%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 77%, rgba(223,245,238,1) 80%, rgba(10,176,127,1) 81%);
 }
 
 .flash-won {
-    padding: 0.5em;
+    padding: 1em;
     color: #358500;
     background-color: #ccffd3;
     border-color: #b8ffc9;
 }
 
 .flash-lost {
-    padding: 0.5em;
+    padding: 1em;
     color: #850404;
     background-color: #ffcdcd;
     border-color: #ffbaba;
+}
+
+.cardgame {
+    background-color: #0AB07F;
+    color: white;
+    padding: 10em 10em 12em;
+    margin: -2em 0;
+}
+
+.gamecontainer {
+    width: 700px;
+}
+
+.h121 {
+    border-bottom: none;
+    margin-top: -3em;
+    margin-bottom: 1em;
+}
+
+.gameh1 {
+    /* background-color: #0AB07F; */
+    padding: 0.5em;
+    border-bottom: none;
+}
+
+.carddeck {
+    background-color: #0AB07F;
+    padding: 1em;
+}
+
+.statistics {
+    font-size: 1.2rem;
 }
