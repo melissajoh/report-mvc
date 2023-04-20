@@ -91,31 +91,24 @@ class GameBoard
         $diamonds = ['🃁', '🃂', '🃃', '🃄', '🃅', '🃆', '🃇', '🃈', '🃉', '🃊', '🃋', '🃍', '🃎'];
         $clubs = ['🃑', '🃒', '🃓', '🃔', '🃕', '🃖', '🃗', '🃘', '🃙', '🃚', '🃛', '🃝', '🃞'];
         $score = 0;
+        $index = -1;
 
         if (in_array($card, $spades)) {
             $index = array_search($card, $spades);
             $score = $index + 1;
-            if ($index === 0 && $playerScore <= 7) {
-                $score = 14;
-            }
         } elseif (in_array($card, $hearts)) {
             $index = array_search($card, $hearts);
             $score = $index + 1;
-            if ($index === 0 && $playerScore <= 7) {
-                $score = 14;
-            }
         } elseif (in_array($card, $diamonds)) {
             $index = array_search($card, $diamonds);
             $score = $index + 1;
-            if ($index === 0 && $playerScore <= 7) {
-                $score = 14;
-            }
         } elseif (in_array($card, $clubs)) {
             $index = array_search($card, $clubs);
             $score = $index + 1;
-            if ($index === 0 && $playerScore <= 7) {
-                $score = 14;
-            }
+        }
+
+        if ($index === 0 && $playerScore <= 7) {
+            $score = 14;
         }
 
         return $score;
@@ -153,6 +146,21 @@ class GameBoard
     }
 
     /**
+     * Method for bank drawing cards from deck smarter
+     * @return CardHand array with the bank's cards
+     */
+    public function bankDrawsSmarter()
+    {
+        while ($this->getStatistics($this->bank->getScore()) > 40) {
+            $this->draw();
+            $score = $this->calculateScore($this->getDrawnCard(), $this->bank->getScore());
+            $this->bank->addScore($score);
+            $this->hand->addString($this->getDrawnCard());
+        }
+        return $this->hand;
+    }
+
+    /**
      * Check who has won the round
      * @return string|void with winner
      */
@@ -170,5 +178,39 @@ class GameBoard
         } elseif ($this->player->getScore() < $this->bank->getScore()) {
             return 'Banken vann denna runda!';
         }
+    }
+
+    /**
+     * Check if deck is empty
+     * @return bool|void true if deck is empty
+     */
+    public function checkEmptyDeck()
+    {
+        if ($this->deck->getCards() == []) {
+            return true;
+        }
+    }
+
+    /**
+     * Get statistics on likelyness to get score over 21 with next card
+     * @param int $score Player's current score
+     * @return int|float $chance in percent
+     */
+    public function getStatistics(int $score)
+    {
+        $cardsUnderLimit = 0;
+        foreach ($this->deck->getCards() as $card) {
+            $cardScore = $this->calculateScore($card, $score);
+            if ($cardScore <= (21 - $score)) {
+                $cardsUnderLimit += 1;
+            }
+        }
+
+        $chance = 0;
+        if ($this->deck->getCards() != []) {
+            $chance = ($cardsUnderLimit / count($this->deck->getCards())) * 100;
+        }
+
+        return round($chance);
     }
 }
