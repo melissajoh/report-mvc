@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Draw card</h1>
-    <div>
+    <div class="carddeck">
         {% for card in cardsDrawn %}
             <span class="cards {{ card }}">{{ card }}</span>
         {% endfor %}
