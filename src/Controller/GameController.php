@@ -123,6 +123,7 @@ class GameController extends AbstractController
         $data = [
             "card" => $game->getDrawnCard(),
             "hand" => $game->getHand()->getHandString(),
+            "bankHand" => $game->getBankHand()->getHandString(),
             "player" => $session->get("player_score"),
             "bank" => $session->get("bank_score"),
             "flash" => $session->get("flash"),
@@ -164,9 +165,6 @@ class GameController extends AbstractController
          * @var GameBoard $game Current game of 21
          */
         $game = $session->get("game");
-        if ($game->getHand() != null) {
-            $game->getHand()->clearHand();
-        }
 
         if ($session->get("which_bank") == "smart") {
             $bankScore = $game->bankDrawsSmarter();
@@ -189,6 +187,11 @@ class GameController extends AbstractController
          * @var GameBoard $game Current game of 21
          */
         $game = $session->get("game");
+
+        if ($game->getHand() != null) {
+            $game->getHand()->clearHand();
+            $game->getBankHand()->clearHand();
+        }
 
         $session->set("player_score", $game->getPlayer()->resetScore());
         $session->set("bank_score", $game->getBank()->resetScore());

@@ -9,6 +9,7 @@
     <span class="text-danger">&diams;</span></h1>
     <div class="container gamecontainer">
     {% if closeGame == false %}
+        {# Buttons #}
         <form method="post" action="">
             <div class="row justify-content-center">
             {% if flash == null %}
@@ -30,24 +31,45 @@
             {% endif %}
             </div>
         </form>
+        {# Statistics #}
         {% if hand != [] and flash == null %}
             <div class="statistics mt-3">
                 <div class="row justify-content-between">
-                    <div class="col-4 bg-light py-1 shadow text-dark">Nuvarande poäng: <b>{{ player }}</b></div>
-                    <div class="col-5 bg-light py-1 shadow text-dark">Chans att inte bli tjock: <b>{{statistics}} %</b></div>
+                    <div class="col-4 bg-light py-1 shadow text-dark mb-3">Nuvarande poäng: <b>{{ player }}</b></div>
+                    <div class="col-5 bg-light py-1 shadow text-dark mb-3">Chans att inte bli tjock: <b>{{statistics}} %</b></div>
                 </div>
             </div>
         {% elseif hand == [] and flash == null and playerWon == 0 and bankWon == 0 %}
+        {# Info box #}
             <p class="my-5 text-center bg-info p-5 shadow">Du spelar först, sedan är det bankens tur. 
             Du kan under spelets gång dra ett nytt kort eller välja att stanna. Dra ditt första kort för att börja, lycka till!</p>
         {% endif %}
 
         {{ include('game/flash.html.twig') }}
 
-        {% for card in hand %}
-            <span class="drawn {{ card }}">{{ card }}</span>
-        {% endfor %}
+        {# Card hands #}
+        <div class="container">
+            <div class="row">
+                {% if hand != [] %}
+                <div class="col">
+                    <h3 class="handh3">Spelarens hand:</h3>
+                    {% for card in hand %}
+                        <span class="drawn {{ card }}">{{ card }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if bankHand != [] %}
+                <div class="col">
+                    <h3 class="handh3">Bankens hand:</h3>
+                    {% for card in bankHand %}
+                        <span class="drawn {{ card }}">{{ card }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
 
+        {# Score #}
         <div class="mt-4">
             <h2>Ställning:</h2>
             <div class="row justify-content-between">
@@ -65,10 +87,10 @@
                 </div>
             </div>
         </div>
+
+    {# End screen #}
     {% elseif closeGame == true %}
-        <form>
-        <input type="hidden" value="{{ include('game/flash.html.twig') }}">
-        </form>
+        <div style="display:none;">{{ include('game/flash.html.twig') }}</div>
         {% if playerWon < bankWon %}
             <div class="my-5 text-center bg-info p-5 shadow"><p><b>Banken vann</b> med {{ bankWon }} vunna rundor och {{ bankCurrency }} pengar kvar</p>
             <p>Spelaren hade {{ playerWon }} vunna rundor och {{ playerCurrency }} pengar kvar</p></div>

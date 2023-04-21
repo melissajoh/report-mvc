@@ -11,13 +11,15 @@ class GameBoard
      * @var DeckOfCards $deck holding all cards
      * @var Player $player The person playing
      * @var Player $bank The bank (computer)
-     * @var CardHand $hand Hand holding cards drawn from deck
+     * @var CardHand $hand Hand holding player cards drawn from deck
+     * @var CardHand $bankHand Hand holding bank cards drawn from deck
      * @var string $drawnCard Card drawn from deck
      */
     private DeckOfCards $deck;
     private Player $player;
     private Player $bank;
     private CardHand $hand;
+    private CardHand $bankHand;
     private string $drawnCard = "";
 
     /**
@@ -30,6 +32,7 @@ class GameBoard
         $this->player = new Player();
         $this->bank = new Player();
         $this->hand = new CardHand();
+        $this->bankHand = new CardHand();
         $this->deck->shuffleDeck();
     }
 
@@ -76,6 +79,15 @@ class GameBoard
     public function getHand()
     {
         return $this->hand;
+    }
+
+        /**
+     * Get bank hand
+     * @return CardHand holding drawn cards
+     */
+    public function getBankHand()
+    {
+        return $this->bankHand;
     }
 
     /**
@@ -140,9 +152,9 @@ class GameBoard
             $this->draw();
             $score = $this->calculateScore($this->getDrawnCard(), $this->bank->getScore());
             $this->bank->addScore($score);
-            $this->hand->addString($this->getDrawnCard());
+            $this->bankHand->addString($this->getDrawnCard());
         }
-        return $this->hand;
+        return $this->bankHand;
     }
 
     /**
@@ -155,9 +167,9 @@ class GameBoard
             $this->draw();
             $score = $this->calculateScore($this->getDrawnCard(), $this->bank->getScore());
             $this->bank->addScore($score);
-            $this->hand->addString($this->getDrawnCard());
+            $this->bankHand->addString($this->getDrawnCard());
         }
-        return $this->hand;
+        return $this->bankHand;
     }
 
     /**
