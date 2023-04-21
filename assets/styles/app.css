@@ -120,6 +120,7 @@ h1 {
     color: #358500;
     background-color: #ccffd3;
     border-color: #b8ffc9;
+    margin-bottom: 0.5em;
 }
 
 .flash-lost {
@@ -127,6 +128,7 @@ h1 {
     color: #850404;
     background-color: #ffcdcd;
     border-color: #ffbaba;
+    margin-bottom: 0.5em;
 }
 
 .cardgame {
@@ -137,7 +139,8 @@ h1 {
 }
 
 .gamecontainer {
-    width: 700px;
+    width: 800px;
+    padding-right: 5em;
 }
 
 .h121 {
@@ -150,6 +153,10 @@ h1 {
     /* background-color: #0AB07F; */
     padding: 0.5em;
     border-bottom: none;
+}
+
+.handh3 {
+    position: absolute;
 }
 
 .carddeck {
