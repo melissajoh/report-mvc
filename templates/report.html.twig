@@ -79,6 +79,55 @@ konstruktionerna interface och trait. Att jobba med klasser och sessioner i PHP.
 </pre>
 
 <h2 id="kmom03">Kmom03</h2>
+<pre>
+När jag först skulle göra flödesdiagram och pseudokod kändes det jobbigt. 
+Detta troligen för att jag inte känner mig säker på programmering ännu och 
+det kändes svårt att veta vad jag skulle behöva göra. Men efter att jag fått 
+fundera igenom uppgiften lyckades jag ändå skapa ett flödesdiagram och pseudokod. 
+Vilket kändes ganska bra ändå. Det kändes som att det absolut skulle kunna fungera 
+som bra stöd i att ta sig an olika programmeringsuppgifter och det tvingade mig 
+att faktiskt tänka igenom innan jag satte igång.
+
+Jag löste uppgiften med hjälp av de klasser jag gjort i tidigare kursmoment 
+samt två nya klasser. Dessa döpte jag till Player och GameBoard. Player håller 
+en spelare med spelarens poäng samt en mängd pengar. GameBoard är själva spelplanen, 
+där en spelare och banken initieras tillsammans med en kortlek, nuvarande korthand 
+och det senaste dragna kortet. I denna klass finns metoder som drar ett kort, 
+flera get-metoder som visar till exempel nuvarande hand, en metod som räknar ut 
+poängen för varje kort, metoder för funktionalitet när spelaren eller banken drar 
+kort, metod för statistik och att avsluta spelet.
+
+Jag började att göra alla grundläggande krav för kortspelet 21 och fortsatte 
+sedan arbeta med spelet med den tid som blev över. Jag lade då till satsning 
+av pengar, statistik och smartare bank samt stylade spelet. Jag valde att 
+visa ställningen på spelplanen, med rundans poäng, antal rundor spelaren 
+respektive banken vunnit och varje spelares pengamängd. Spelet sker i rundor, 
+där någon vinner varje runda. Spelet tar sedan slut antingen när någon har slut 
+på pengar eller när kortleken är slut. Då är den slutgiltiga vinnaren den som 
+vunnit flest gånger (och då även har mest pengar kvar).
+
+Förbättringspotential är till exempel hur satsningen av pengar går till. Nu 
+får man välja en mängd pengar som satsas varje runda innan spelet startas. Kanske 
+hade det varit bättre om man fick satsa pengar inför varje runda. Sättet jag har 
+implementerat satsningen på just nu gör det inte så troligt att man hinner förlora 
+alla pengar innan kortleken tar slut om man satsar en för låg summa i början. Det 
+gör också att den som vinner flest antal rundor automatiskt är den som har mest 
+pengar, då den ena förlorar pengarna och den andra får samma mängd pengar.
+
+Mer förbättringspotential är väl själva koden och strukturen på den. Jag har 
+försökt minimera koden i Controllern, men det blev kanske lite mycket i 
+play-metoden. Detta främst då jag använt mig av flash-meddelanden och inte kom 
+på något annat sätt än att jobba med funktionaliteten av dessa i controllern. 
+Det finns säkert saker som kan göras på ett smartare och “renare” sätt också. 
+Men det känns överlag okej.
+
+Att koda i ett ramverk som Symfony känns bra. Det känns som en bra grej att ha 
+möjlighet att använda för att slippa skriva allting från början varje gång någonting 
+ska programmeras.
+
+TIL för det här kursmomentet är att använda phpmd och phpstan, hur man kan 
+bygga upp ett kortspel, att skriva flödesdiagram och pseudokod.
+</pre>
 
 <h2 id="kmom04">Kmom04</h2>
 
