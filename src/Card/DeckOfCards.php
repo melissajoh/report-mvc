@@ -39,15 +39,15 @@ class DeckOfCards
      */
     public function draw(): string
     {
-        $card = "";
         if ($this->deck != []) {
             $cardNr = array_rand($this->deck);
             $cards = $this->deck;
             $card = $cards[$cardNr];
 
             unset($this->deck[$cardNr]);
+            return $card;
         }
-        return $card;
+        return "";
     }
 
     /**
