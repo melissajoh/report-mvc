@@ -130,6 +130,43 @@ bygga upp ett kortspel, att skriva flödesdiagram och pseudokod.
 </pre>
 
 <h2 id="kmom04">Kmom04</h2>
+<pre>
+Jag tyckte att det kändes helt okej att skriva testkod med PHPUnit. Det hjälpte 
+att vi fick prova testning i en tidigare Python-kurs så att man en liten aning 
+om hur det går till. Det var samma princip som då med att namnge filer, klasser 
+och metoder med “test” och sedan använda olika asserts. Jag har inte så mycket 
+att säga om PHPUnit rent allmänt, det fungerade bra. Som vanligt är det lite klurigt 
+att få fram vad man söker i manualen, men bra träning att läsa i den.
+
+Jag fick 100% kodtäckning på min kod. Men hur vältestad den är, är jag lite osäker 
+på. Jag har försökt tänka på att göra värdefulla tester och testa det som behövs. 
+Men det är inte det lättaste. Jag provade också att testa Controllers, men jag 
+tyckte att det var svårt att hitta information kring hur man gör. De få tester 
+jag lyckades skriva känns inte super-värdefulla. Men det var kul att försöka lite 
+i alla fall.
+
+Delar av min kod känns absolut som “testbar” kod och det gick smidigt att skriva 
+tester. Andra delar var väldigt kluriga att lyckas testa. Jag försökte använda lite 
+mock och sådant, men det gick inget vidare. Det slutade med att jag skrev om några 
+metoder för att de skulle bli enkla att testa. Detta till exempel i form av att jag 
+kortade ner en if-sats i metoden endGame i GameBoard-klassen, så att den nu endast 
+har två returns istället för fyra. Metoden draw i DeckOfCards, där jag hade en return 
+i en if-sats och sedan en extra return utanför, kunde jag korta ner så att det bara 
+behövdes en return utanför if-satsen. Jag lade även till in-parametrar på ett par 
+ställen som jag satte till default-värde “null” för att få möjlighet att skicka med 
+värden i mina tester. Detta gjorde att jag fick lägga till en extra if-sats i dessa 
+metoder (endGame och checkEmptyDeck i GameBoard-klassen) för att sätta variabel-värde 
+på dessa när man inte skickar med värden.
+
+Mina ändringar gjorde min kod enklare att testa, på vissa ställen snyggare men på 
+andra ställen inte. De två förstnämnda ändringarna kändes som förbättringar som 
+bidrog till snyggare och renare kod, men just lösningen som skapade en extra if-sats 
+tyckte jag inte blev så snygg. Så jag vet inte riktigt om testbar kod alltid innebär 
+“snygg och ren kod”. Kanske ofta men ibland inte.
+
+TIL för detta kursmoment lite testning i PHPUnit, få fram och titta på kodtäckning, 
+generera dokumentation av koden med phpdoc.
+</pre>
 
 <h2 id="kmom05">Kmom05</h2>
 
