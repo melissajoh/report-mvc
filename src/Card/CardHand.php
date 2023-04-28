@@ -50,6 +50,7 @@ class CardHand
     public function clearHand(): array
     {
         unset($this->handString);
+        unset($this->hand);
         return [];
     }
 
