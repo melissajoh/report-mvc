@@ -65,6 +65,10 @@ class DeckOfCardsTest extends TestCase
         $this->assertNotContains($res, $deck->getCards());
         $this->assertNotContains($res2, $deck->getCards());
         $this->assertEquals(50, $deck->getNrOfCards());
+
+        $deck->removeCards(range(0, 51));
+        $res = $deck->draw();
+        $this->assertEquals("", $res);
     }
     
     /**
