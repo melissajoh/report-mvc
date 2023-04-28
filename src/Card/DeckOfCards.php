@@ -15,7 +15,7 @@ class DeckOfCards
     private $deck = [];
     // private $cardDeck = [];
 
-    public function __construct(Card $card)
+    public function __construct(Card $card = new Card())
     {
         for ($i = 0; $i <= 51; $i++) {
             $this->deck[] = $card->initCard($i)->getAsString();
@@ -39,16 +39,15 @@ class DeckOfCards
      */
     public function draw(): string
     {
+        $card = "";
         if ($this->deck != []) {
             $cardNr = array_rand($this->deck);
             $cards = $this->deck;
             $card = $cards[$cardNr];
 
             unset($this->deck[$cardNr]);
-
-            return $card;
         }
-        return "";
+        return $card;
     }
 
     /**
