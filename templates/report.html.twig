@@ -150,16 +150,14 @@ tester. Andra delar var väldigt kluriga att lyckas testa. Jag försökte använ
 mock och sådant, men det gick inget vidare. Det slutade med att jag skrev om några 
 metoder för att de skulle bli enkla att testa. Detta till exempel i form av att jag 
 kortade ner en if-sats i metoden endGame i GameBoard-klassen, så att den nu endast 
-har två returns istället för fyra. Metoden draw i DeckOfCards, där jag hade en return 
-i en if-sats och sedan en extra return utanför, kunde jag korta ner så att det bara 
-behövdes en return utanför if-satsen. Jag lade även till in-parametrar på ett par 
+har två returns istället för fyra. Jag lade även till in-parametrar på ett par 
 ställen som jag satte till default-värde “null” för att få möjlighet att skicka med 
 värden i mina tester. Detta gjorde att jag fick lägga till en extra if-sats i dessa 
 metoder (endGame och checkEmptyDeck i GameBoard-klassen) för att sätta variabel-värde 
 på dessa när man inte skickar med värden.
 
 Mina ändringar gjorde min kod enklare att testa, på vissa ställen snyggare men på 
-andra ställen inte. De två förstnämnda ändringarna kändes som förbättringar som 
+andra ställen inte. Den förstnämnda ändringen kändes som en förbättring som 
 bidrog till snyggare och renare kod, men just lösningen som skapade en extra if-sats 
 tyckte jag inte blev så snygg. Så jag vet inte riktigt om testbar kod alltid innebär 
 “snygg och ren kod”. Kanske ofta men ibland inte.
