@@ -6,6 +6,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Json controller for quote
+ */
 class JsonController
 {
     #[Route("/api/quote", name: "quote")]

@@ -12,6 +12,9 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Json controller for cards and card game 21
+ */
 class JsonCardController
 {
     #[Route("/api/deck", name: "deck", methods: ['GET'])]

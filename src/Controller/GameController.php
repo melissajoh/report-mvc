@@ -15,6 +15,9 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Card game 21
+ */
 class GameController extends AbstractController
 {
     #[Route("/game", name: "game_home")]
