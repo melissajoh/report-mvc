@@ -46,6 +46,15 @@ class GameBoard
     }
 
     /**
+     * Get deck
+     * @return array<string>
+     */
+    public function getDeck(): array
+    {
+        return $this->deck->getCards();
+    }
+
+    /**
      * Get drawn card
      * @return string representing drawn card
      */
@@ -176,35 +185,41 @@ class GameBoard
      * Check who has won the round
      * @return string|void with winner
      */
-    public function endGame()
+    public function endGame(int $bankScore = null, int $playerScore = null)
     {
-        // if ($this->player->getScore() > 21) {
-        //     return "Banken vann";
-        // } else
-        if ($this->bank->getScore() > 21) {
+        if ($bankScore == null || $playerScore == null) {
+            $bankScore = $this->bank->getScore();
+            $playerScore = $this->player->getScore();
+        }
+
+        if ($bankScore > 21
+        || $playerScore > $bankScore) {
             return 'Spelaren vann denna runda!';
-        } elseif ($this->player->getScore() == $this->bank->getScore()) {
-            return 'Banken vann denna runda!';
-        } elseif ($this->player->getScore() > $this->bank->getScore()) {
-            return 'Spelaren vann denna runda!';
-        } elseif ($this->player->getScore() < $this->bank->getScore()) {
+        } elseif ($playerScore == $bankScore
+        || $playerScore < $bankScore) {
             return 'Banken vann denna runda!';
         }
     }
 
     /**
      * Check if deck is empty
+     * @param array<string>|null $deck optional deck input
      * @return bool|void true if deck is empty
      */
-    public function checkEmptyDeck()
+    public function checkEmptyDeck(array $deck = null)
     {
-        if ($this->deck->getCards() == []) {
+        if ($deck === null) {
+            $deck = $this->deck->getCards();
+        }
+        if ($deck === []) {
             return true;
         }
     }
 
     /**
-     * Get statistics on likelyness to get score over 21 with next card
+     * Get statistics on likelyness to not get score over 21 with next card.
+     * 100 means a 100% chance to get a score under 21.
+     * The higher the number the better.
      * @param int $score Player's current score
      * @return int|float $chance in percent
      */
