@@ -109,7 +109,7 @@ class ProductController extends AbstractController
 
         // $product->setValue($value);
         // $entityManager->flush();
-        
+
         $product->setValue($value);
         $productRepository->save($product, true);
 
