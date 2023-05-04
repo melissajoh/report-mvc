@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliotek{% endblock %}
+
+{% block body %}
+
+    <div class="container w-75">
+    <h1 class="text-center mb-5 border-0">🕮 Bibliotek 🕮</h1>
+        <div class="text-center mb-5">
+        <p class="font-weight-bold">Välkommen till biblioteket!</p>
+        <p>Klicka dig vidare för att se alla våra böcker eller varför inte
+        lägga till egna. Du kan även ändra eller radera befintliga böcker.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3 mt-2">
+            <a href="{{ path('all_books') }}" class="bg-dark p-2 rounded text-light">Se böcker</a>
+            </div>
+            <div class="col-md-3 mt-2">
+            <a href="{{ path('book_create') }}" class="border border-dark p-2 rounded text-dark">Lägg till bok</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

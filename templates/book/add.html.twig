@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliotek{% endblock %}
+
+{% block body %}
+    <h1 class="border-0">Lägg till bok</h1>
+    <form action="" method="post">
+    <div class="form-group">
+        <label for="title">Titel</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input type="text" class="form-control" id="isbn" name="isbn" required>
+    </div>
+    <div class="form-group">
+        <label for="author">Författare</label>
+        <input type="text" class="form-control" id="author" name="author" required>
+    </div>
+    <div class="form-group">
+        <label for="image">Bild-URL</label>
+        <input type="text" class="form-control" id="image" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Lägg till</button>
+    </form>
+
+{% endblock %}

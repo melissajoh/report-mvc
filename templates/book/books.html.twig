@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliotek{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center border-0">🕮🕮🕮 Alla böcker 🕮🕮🕮</h1>
+<table class="table table-bordered mt-5">
+    <thead class="thead-dark">
+    <th>Id</th>
+    <th>Titel</th>
+    <th>ISBN</th>
+    <th>Författare</th>
+    <th>Bild</th>
+    </thead>
+    {% for book in books %}
+    <tr>
+        <td><a href="{{ path('book_by_id', { 'id': book.id }) }}">{{ book.id }}</a></td>
+        <td><a href="{{ path('book_by_id', { 'id': book.id }) }}">{{ book.title }}</a></td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.author }}</td>
+        <td><a href="{{ book.image }}" alt="Book image link"><img src="{{ book.image }}" width="50"></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
