@@ -21,6 +21,9 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    /**
+     * @SuppressWarnings(PHPMD)
+     */
     public function save(Product $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -30,6 +33,9 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @SuppressWarnings(PHPMD)
+     */
     public function remove(Product $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
