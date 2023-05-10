@@ -187,7 +187,7 @@ class GameBoard
      */
     public function endGame(int $bankScore = null, int $playerScore = null)
     {
-        if ($bankScore == null || $playerScore == null) {
+        if ($bankScore === null || $playerScore === null) {
             $bankScore = $this->bank->getScore();
             $playerScore = $this->player->getScore();
         }

@@ -119,7 +119,7 @@ class GameController extends AbstractController
         $playerCurrency = $session->get("player_currency");
         $bankCurrency = $session->get("bank_currency");
 
-        if ($game->checkEmptyDeck() == true or $playerCurrency == 0 or $bankCurrency == 0) {
+        if ($game->checkEmptyDeck() === true or $playerCurrency == 0 or $bankCurrency == 0) {
             $session->set("closeGame", true);
         }
 
@@ -150,7 +150,7 @@ class GameController extends AbstractController
          */
         $game = $session->get("game");
 
-        if ($game->checkEmptyDeck() != true) {
+        if ($game->checkEmptyDeck() !== true) {
             $game->playerDraws();
             $session->set("game", $game);
         }
