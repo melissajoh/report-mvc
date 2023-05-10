@@ -28,7 +28,6 @@ class CardController extends AbstractController
             // $deck->initDeck($card);
             $session->set("deck_of_cards", $deck);
         }
-        $deck = $session->get("deck_of_cards");
 
         return $this->render('card/home.html.twig');
     }
