@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683649567">
-  <project timestamp="1683649567">
+<coverage generated="1683704196">
+  <project timestamp="1683704196">
     <file name="/home/meljoh/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="4" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="9" coveredelements="9"/>
@@ -123,17 +123,17 @@
       <line num="114" type="stmt" count="3"/>
       <line num="115" type="stmt" count="3"/>
       <line num="117" type="stmt" count="3"/>
-      <line num="118" type="stmt" count="3"/>
-      <line num="119" type="stmt" count="3"/>
+      <line num="118" type="stmt" count="2"/>
+      <line num="119" type="stmt" count="2"/>
       <line num="120" type="stmt" count="3"/>
       <line num="121" type="stmt" count="2"/>
       <line num="122" type="stmt" count="2"/>
       <line num="123" type="stmt" count="3"/>
       <line num="124" type="stmt" count="3"/>
       <line num="125" type="stmt" count="3"/>
-      <line num="126" type="stmt" count="2"/>
-      <line num="127" type="stmt" count="2"/>
-      <line num="128" type="stmt" count="2"/>
+      <line num="126" type="stmt" count="3"/>
+      <line num="127" type="stmt" count="3"/>
+      <line num="128" type="stmt" count="3"/>
       <line num="131" type="stmt" count="3"/>
       <line num="132" type="stmt" count="2"/>
       <line num="135" type="stmt" count="3"/>
