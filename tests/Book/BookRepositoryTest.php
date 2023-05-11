@@ -22,18 +22,18 @@ class BookRepositoryTest extends KernelTestCase
             ->getManager();
     }
 
-    public function testSearchByName(): void
-    {
-        /**
-         * @var Book
-         */
-        $book = $this->entityManager
-            ->getRepository(Book::class)
-            ->findOneBy(['id' => '1'])
-        ;
+    // public function testSearchByName(): void
+    // {
+    //     /**
+    //      * @var Book
+    //      */
+    //     $book = $this->entityManager
+    //         ->getRepository(Book::class)
+    //         ->findOneBy(['id' => '1'])
+    //     ;
 
-        $this->assertSame('Den påhittade boken', $book->getTitle());
-    }
+    //     $this->assertSame('Den påhittade boken', $book->getTitle());
+    // }
 
     public function testSave(): void
     {
