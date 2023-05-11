@@ -89,11 +89,7 @@ class GameController extends AbstractController
         /**
          * Flash messages and dealing with currency
          */
-        if ($playerScore > 21) {
-            $session->set("flash", 'Banken vann denna runda!');
-        } elseif ($playerScore === 21) {
-            $session->set("flash", 'Spelaren vann denna runda!');
-        }
+        $game->checkPlayerScore();
 
         if ($session->get("flash") == "Banken vann denna runda!") {
             $this->addFlash(

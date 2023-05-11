@@ -240,4 +240,17 @@ class GameBoard
 
         return round($chance);
     }
+
+    /**
+     * Checks if player score goes over 21 or is 21
+     * @return string|void
+     */
+    public function checkPlayerScore()
+    {
+        if ($this->player->getScore() > 21) {
+            return $_SESSION['_sf2_attributes']['flash'] = 'Banken vann denna runda!';
+        } elseif ($this->player->getScore() === 21) {
+            return $_SESSION['_sf2_attributes']['flash'] = 'Spelaren vann denna runda!';
+        }
+    }
 }
