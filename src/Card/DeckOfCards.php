@@ -2,8 +2,6 @@
 
 namespace App\Card;
 
-// use App\Card\CardGraphic;
-
 /**
  * Deck of cards
  */

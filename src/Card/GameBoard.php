@@ -90,7 +90,7 @@ class GameBoard
         return $this->hand;
     }
 
-        /**
+    /**
      * Get bank hand
      * @return CardHand holding drawn cards
      */
@@ -151,9 +151,6 @@ class GameBoard
      */
     public function bankDraws()
     {
-        // $card = new CardGraphic();
-        // $this->deck = new DeckOfCards($card);
-        // $this->deck->shuffleDeck();
         while ($this->bank->getScore() < 17) {
             $this->draw();
             $score = $this->calculateScore($this->getDrawnCard(), $this->bank->getScore());
