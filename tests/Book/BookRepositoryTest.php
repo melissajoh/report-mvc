@@ -35,30 +35,7 @@ class BookRepositoryTest extends KernelTestCase
         $this->assertSame('Den påhittade boken', $book->getTitle());
     }
 
-    public function testSave(): void
-    {
-        $book = new Book();
-        $book->setTitle("Hej");
-        $book->setIsbn("9102910");
-        $book->setAuthor("Test Testsson");
-
-        /**
-         * @var BookRepository
-         */
-        $rep = $this->entityManager
-        ->getRepository(Book::class);
-
-        $rep->save($book, true)
-        ;
-
-        $res = $this->entityManager
-        ->getRepository(Book::class)
-        ->findAll();
-
-        $this->assertContains($book, $res);
-    }
-
-    public function testRemove(): void
+    public function testSaveAndRemove(): void
     {
         $book = new Book();
         $book->setTitle("Hej");
