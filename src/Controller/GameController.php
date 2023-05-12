@@ -77,11 +77,8 @@ class GameController extends AbstractController
         /**
          * Score and rounds won
          */
-        $playerScore = $game->getPlayer()->getScore();
-        $session->set("player_score", $playerScore);
-
-        $bankScore = $game->getBank()->getScore();
-        $session->set("bank_score", $bankScore);
+        $session->set("player_score", $game->getPlayer()->getScore());
+        $session->set("bank_score", $game->getBank()->getScore());
 
         $playerWon = $session->get("player_won");
         $bankWon = $session->get("bank_won");
@@ -109,15 +106,7 @@ class GameController extends AbstractController
             $session->set("player_currency", $game->getPlayer()->addCurrency($bet));
         }
 
-        /**
-         * Checking if deck is empty or someone is out of currency, end game
-         */
-        $playerCurrency = $session->get("player_currency");
-        $bankCurrency = $session->get("bank_currency");
-
-        if ($game->checkEmptyDeck() === true or $playerCurrency == 0 or $bankCurrency == 0) {
-            $session->set("closeGame", true);
-        }
+        $game->closeGame($session->get("player_currency"), $session->get("bank_currency"));
 
         $data = [
             "card" => $game->getDrawnCard(),
@@ -130,7 +119,7 @@ class GameController extends AbstractController
             "bankWon" => $session->get("bank_won"),
             "playerCurrency" => $session->get("player_currency"),
             "bankCurrency" => $session->get("bank_currency"),
-            "statistics" => $game->getStatistics($playerScore),
+            "statistics" => $game->getStatistics($game->getPlayer()->getScore()),
             "closeGame" => $session->get("closeGame")
         ];
 
