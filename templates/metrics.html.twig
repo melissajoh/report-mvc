@@ -27,7 +27,8 @@ loopar och alltså kan ta flera vägar. Är koden för komplex blir den svår
 att sätta sig in i.
 
 Cohesion är till vilken grad element i en modul hör samman. Hög Cohesion
-är att föredra då detta gör koden mer robust och pålitlig.
+är att föredra då detta gör koden mer robust och pålitlig. Jag hittade
+inte detta värde i någon av mina rapporter.
 
 Coupling är beroendet mellan moduler. Här vill man istället ha låg 
 coupling då detta tyder på struktur och bra design. Detta kan delas in
@@ -66,9 +67,8 @@ då det är controllers som har lite högre siffra kanske det ändå är rimligt
 <pre>
 Det första jag noterar i denna rapport är att kodtäckningen är låg. Här
 är det framförallt för att controllerna inte testas som den är så pass
-låg. Jag hade några tester för dessa som jag fick ta bort för att kunna
-generera en scrutinizer-rapport. Något gjorde att den inte ville sig med
-testerna.
+låg. Jag hade några tester för dessa som jag inte fick med i första
+bygget pga error.
 
 Sedan finns det 6 issues att fixa, varav 2 klassas som "major". Går man
 vidare till kod-fliken och "Hot Spots" har jag tre operationer som har betyg
@@ -91,8 +91,8 @@ Det andra problemet jag vill ta tag i är att försöka öka kodtäckningen. Jag
 tänker nog göra detta genom att skapa några tester för Book och Product som
 skapades under förra kursmomentet för att få upp procenten något. Möjligen
 ta bort Product helt och hållet då det inte tillhör någon uppgift. Även försöka
-lägga till mina tester för controllers igen, om jag lyckas förbättra de på något
-sätt så att de inte förstör bygget av scrutinizer-rapporten.
+lägga till mina tester för controllers igen, om jag lyckas lösa hur jag får in
+dem så att de inte förstör bygget av scrutinizer-rapporten.
 
 Den tredje förbättringen är play()-metoden och att försöka sänka CRAP-score och
 komplexitet, samt göra ett försök att öka betyget till A. Möjligen även försöka
@@ -105,9 +105,49 @@ skulle minska och förhoppningsvis byta färg.
 </pre>
 <h3>Efter implementation</h3>
 <pre>
+Jag försökte fixa Issues och Violations. Jag lyckades lösa alla Issues i Scrutinizer
+förutom 1 som hade med Kernel att göra. Detta påverkade dock inte poängen som jag
+trodde. Violations i phpmetrics lyckades jag dock inte göra någonting åt då jag
+inte riktigt förstod hur de skulle lösas. Jag tror att bug-varningen i GameBoard
+och GameController kan lösas genom att göra metoderna mindre komplexa och kanske
+kortare, men det var inget jag lyckades med denna gång.
+
+Sedan tog jag tag i kodtäckningen och lyckades få in mina tester för controllers
+som inte ville sig i första bygget. Jag skrev även några nya sådana tester samt
+tester för Book från förra kursmomentet. Jag tog även bort Product helt då jag
+tänkte att det mer hörde till övning än uppgift. Detta ökade kodtäckningen från
+29% till 64%.
+
+Sedan var det play()-metoden i GameController som behövde justeras. Jag skapade
+två metoder av lite av koden som fanns där, vilket gjorde att jag fick ner
+CRAP-scoren till 4.5 istället för 90 och komplexiteten är godkänd med 4 conditions
+istället för 9. Detta höjde betyget från B till A som jag var ute efter. De två
+andra metoder med betyg B lyckades jag dock inte göra någonting åt. Totalt höjdes
+poängen i scrutinizer från 9.88 till 9.93.
+
+I phpmetrics ändrades inte värdena något avsevärt. Cirkeln för GameController
+blev lite mindre men är fortfarande röd. Average bugs by class gick ner med
+endast 0.01 med de ändringar jag gjorde i GameController (från vad den låg på
+efter att Product-klasserna raderats, vilket påverkade alla värden i phpmetrics
+lite från hur de såg ut på skärmdumpen ovan). Relative system complexity tror
+jag till och med höjdes lite för GameController efter ändringarna som ju visade
+positiva resultat i Scrutinizer.
 </pre>
 
 <h2 id="diskussion">Diskussion</h2>
 <pre>
+Jag tycker att det fungerade ganska bra att jobba mot bättre kod på detta sätt.
+Särskilt hjälpsamt var väl kanske Issues och klassbetygen i Scutinizer just för
+den koden jag hade. Jag tyckte även att cirklarna i phpmetrics var bra, men jag
+klurade inte rikigt ut hur jag skulle lösa de röda stora cirklarna just denna
+gång.
+
+Så jag tror väl att det går att använda verktyg som dessa för att förbättra sin
+kod. Man kanske inte bara ska stirra blint på vad man får för färger och siffror
+där dock, då till exempel kodtäckning kan se bra ut i verktyget men inte egentligen
+testa koden särskilt väl. Vissa höga värden som man vill ha så låga som möjligt
+kanske också är höga av rimliga skäl. Men det är absolut en bra hjälp på vägen,
+särskilt när man är ny på programmering och inte har erfarenhet av hur "clean code"
+skrivs.
 </pre>
 {% endblock %}
