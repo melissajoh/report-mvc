@@ -216,6 +216,11 @@ Search.appendIndex(
             "summary": "Check\u0020who\u0020has\u0020won\u0020the\u0020round",
             "url": "classes/App-Card-GameBoard.html#method_endGame"
         },                {
+            "fqsen": "\\App\\Card\\GameBoard\u003A\u003AcloseGame\u0028\u0029",
+            "name": "closeGame",
+            "summary": "Close\u0020whole\u0020game\u0020if\u0020deck\u0020is\u0020empty\u0020or\u0020currency\u0020is\u00200",
+            "url": "classes/App-Card-GameBoard.html#method_closeGame"
+        },                {
             "fqsen": "\\App\\Card\\GameBoard\u003A\u003AcheckEmptyDeck\u0028\u0029",
             "name": "checkEmptyDeck",
             "summary": "Check\u0020if\u0020deck\u0020is\u0020empty",
@@ -225,6 +230,11 @@ Search.appendIndex(
             "name": "getStatistics",
             "summary": "Get\u0020statistics\u0020on\u0020likelyness\u0020to\u0020not\u0020get\u0020score\u0020over\u002021\u0020with\u0020next\u0020card.",
             "url": "classes/App-Card-GameBoard.html#method_getStatistics"
+        },                {
+            "fqsen": "\\App\\Card\\GameBoard\u003A\u003AcheckPlayerScore\u0028\u0029",
+            "name": "checkPlayerScore",
+            "summary": "Checks\u0020if\u0020player\u0020score\u0020goes\u0020over\u002021\u0020or\u0020is\u002021",
+            "url": "classes/App-Card-GameBoard.html#method_checkPlayerScore"
         },                {
             "fqsen": "\\App\\Card\\GameBoard\u003A\u003A\u0024deck",
             "name": "deck",
@@ -416,6 +426,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-MainController.html#method_api"
         },                {
+            "fqsen": "\\App\\Controller\\MainController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-MainController.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
@@ -501,41 +516,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-BookController.html#method_showBookByIsbn"
         },                {
-            "fqsen": "\\App\\Controller\\ProductController",
-            "name": "ProductController",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_index"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AcreateProduct\u0028\u0029",
-            "name": "createProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_createProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowAllProduct\u0028\u0029",
-            "name": "showAllProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showAllProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductById\u0028\u0029",
-            "name": "showProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AdeleteProductById\u0028\u0029",
-            "name": "deleteProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_deleteProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AupdateProduct\u0028\u0029",
-            "name": "updateProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_updateProduct"
-        },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
             "summary": "",
@@ -611,51 +591,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Book.html#property_image"
         },                {
-            "fqsen": "\\App\\Entity\\Product",
-            "name": "Product",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getId"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetName\u0028\u0029",
-            "name": "setName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetValue\u0028\u0029",
-            "name": "getValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetValue\u0028\u0029",
-            "name": "setValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_id"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_name"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_value"
-        },                {
             "fqsen": "\\App\\Repository\\BookRepository",
             "name": "BookRepository",
             "summary": "",
@@ -675,26 +610,6 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/App-Repository-BookRepository.html#method_remove"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository",
-            "name": "ProductRepository",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003Asave\u0028\u0029",
-            "name": "save",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method_save"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003Aremove\u0028\u0029",
-            "name": "remove",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method_remove"
         },                {
             "fqsen": "\\",
             "name": "\\",
