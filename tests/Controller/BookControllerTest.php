@@ -27,15 +27,6 @@ class BookControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    // public function testLibraryShowIdRoute(): void
-    // {
-    //     $client = static::createClient();
-
-    //     $client->request('GET', '/library/{id}');
-
-    //     $this->assertResponseIsSuccessful();
-    // }
-
     public function testLibraryCreate(): void
     {
         $client = static::createClient();
