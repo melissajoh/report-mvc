@@ -82,9 +82,6 @@ class GameBoardTest extends TestCase
     public function testEndGame(): void
     {
         $game = new GameBoard();
-        $stub = $this->createMock(Player::class);
-        $stub->method('getScore')
-            ->willReturn(20);
         $res = $game->endGame();
         $this->assertEquals("Banken vann denna runda!", $res);
 
