@@ -116,17 +116,15 @@ class GameBoard
 
         if (in_array($card, $spades)) {
             $index = array_search($card, $spades);
-            $score = $index + 1;
         } elseif (in_array($card, $hearts)) {
             $index = array_search($card, $hearts);
-            $score = $index + 1;
         } elseif (in_array($card, $diamonds)) {
             $index = array_search($card, $diamonds);
-            $score = $index + 1;
         } elseif (in_array($card, $clubs)) {
             $index = array_search($card, $clubs);
-            $score = $index + 1;
         }
+
+        $score = $index + 1;
 
         if ($index === 0 && $playerScore <= 7) {
             $score = 14;
@@ -198,6 +196,19 @@ class GameBoard
         } elseif ($playerScore == $bankScore
         || $playerScore < $bankScore) {
             return 'Banken vann denna runda!';
+        }
+    }
+
+    /**
+     * Close whole game if deck is empty or currency is 0
+     * @param mixed $playerCurrency
+     * @param mixed $bankCurrency
+     * @return void
+     */
+    public function closeGame(mixed $playerCurrency, mixed $bankCurrency)
+    {
+        if ($this->checkEmptyDeck() === true or $playerCurrency == 0 or $bankCurrency == 0) {
+            $_SESSION['_sf2_attributes']['closeGame'] = true;
         }
     }
 
