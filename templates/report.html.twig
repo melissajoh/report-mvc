@@ -192,6 +192,40 @@ TIL för detta kursmoment är ett annat sätt att jobba med databaser, genom ORM
 </pre>
 
 <h2 id="kmom06">Kmom06</h2>
+PHPmetrics uppfattade jag inte som att det gav mig lika mycket som Scrutinizer 
+för just detta projekt. Jag hade 4 violations som jag inte lyckades klura ut 
+hur de skulle lösas. Resten av värdena tyckte jag var lite kluriga att få ut 
+någonting av. Det som kändes värdefullast var bilden med cirklarna där man kunde 
+se komplexitet och hur lätt en klass skulle bli att underhålla.
+
+Efter mitt första lyckade bygge med Scrutinizer fick jag betyg 9.88 och kodtäckning 
+29%. Jag hade då tagit bort mina tester för controllers då dessa gjorde att bygget 
+av Scrutinizer-rapporten inte lyckades. Jag lyckades dock få in dem igen senare. 
+Mina sämsta betyg på klasser och operationer var tre stycken operationer med betyg 
+B, varav en av dessa hade en CRAP-score på 90.
+
+Att arbeta med Scrutinizer fungerade men jag kämpade lite med att till exempel 
+lägga till mina tester för controllers, vilka klagade på att build/entrypoints.json 
+inte fanns (vilket den inte heller gjorde i github insåg jag sen) och att lägga 
+till mina tester för Book då dessa pratade med min databas-fil som inte heller 
+fanns i github. Så jag gjorde ganska många försök att lägga till dessa, vilket 
+ledde till många commits och push till github. Men överlag känns det som ett bra 
+verktyg som kan hjälpa en att se vad som kan förbättras i ens kod.
+
+Några ändringar jag gjorde för att göra min GameController bättre enligt scrutinizer 
+gör att phpmd klagar på användandet av “SuperGlobals”. Detta har jag sett men lyckades 
+inte lösa det och valde att behålla ändringarna ändå då de gav bättre betyg i 
+scrutinizer.
+
+Till viss del kan man säkert påvisa kodkvalitet med badges. Det går ju till exempel 
+att med en badge om låg kodtäckning se att koden inte testas. Högt Scrutinizer-betyg 
+kan ju också visa att klasser och metoder har höga betyg och kanske inte är för 
+komplexa eller på annat sätt problematiska. Jag tänker att kodkvalitet är när koden 
+är lätt att följa med i, lätt att underhålla, gör vad den ska och inte ställer till 
+med oväntade saker.
+
+TIL för detta kursmoment är att använda PHPmetrics och Scrutinizer för att analysera 
+min kod och se vad som kan förbättras.
 
 <h2 id="kmom10">Kmom10</h2>
 {% endblock %}
