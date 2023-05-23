@@ -4,10 +4,20 @@
       "js": [
         "build/runtime.61b1725c.js",
         "build/751.7f9c0d93.js",
-        "build/app.0784ad4d.js"
+        "build/app.eb4565aa.js"
       ],
       "css": [
         "build/app.4849cf3e.css"
+      ]
+    },
+    "project": {
+      "js": [
+        "build/runtime.61b1725c.js",
+        "build/751.7f9c0d93.js",
+        "build/project.b367c721.js"
+      ],
+      "css": [
+        "build/project.879868c8.css"
       ]
     }
   }
