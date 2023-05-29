@@ -38,16 +38,16 @@ class Actions
     {
         $message = "Du kan inte gå åt det hållet";
         $direction = $room->getId();
-        if ($command === "gå norr" && $room->getNorth() != null) {
+        if ($command === "gå norr" && $room->getNorth() !== null) {
             list($message, $direction) = $this->roomClass
             ->checkIfLockedNorth($room, $backpack, $this->roomsRepository);
-        } elseif ($command === "gå öst" && $room->getEast() != null) {
+        } elseif ($command === "gå öst" && $room->getEast() !== null) {
             list($message, $direction) = $this->roomClass
             ->checkIfLockedEast($room, $backpack, $this->roomsRepository);
-        } elseif ($command === "gå syd" && $room->getSouth() != null) {
+        } elseif ($command === "gå syd" && $room->getSouth() !== null) {
             list($message, $direction) = $this->roomClass
             ->checkIfLockedSouth($room, $backpack, $this->roomsRepository);
-        } elseif ($command === "gå väst" && $room->getWest() != null) {
+        } elseif ($command === "gå väst" && $room->getWest() !== null) {
             list($message, $direction) = $this->roomClass
             ->checkIfLockedWest($room, $backpack, $this->roomsRepository);
         }
@@ -68,10 +68,16 @@ class Actions
         list($item, $itemInItems) = $this->getItemAndItemInItems($command, $items);
 
         if (str_starts_with($command, "ta") && $itemInItems && $item->getGrab() === "yes") {
-            $message = "Du har redan plockat upp " . strtolower($item->getItemName());
+            /** @var string $itemString */
+            $itemString = $item->getItemName();
+            $message = "Du har redan plockat upp " . strtolower($itemString);
             if (!in_array($item->getItemName(), $backpack->getItems())) {
-                $message = "Du plockar upp " . strtolower($item->getDescription());
-                $backpack->add($item->getItemName());
+                /** @var string $grabString */
+                $grabString = $item->getDescription();
+                $message = "Du plockar upp " . strtolower($grabString);
+                /** @var string $backpackString */
+                $backpackString = $item->getItemName();
+                $backpack->add($backpackString);
             }
         }
         return array($message, $room->getId(), $backpack);
@@ -91,8 +97,10 @@ class Actions
         list($item, $itemInItems) = $this->getItemAndItemInItems($command, $items);
 
         if ($itemInItems && $item->getLift() === "yes") {
+            /** @var string $itemString */
+            $itemString = $item->getDescription();
             $coveredItem = "inget";
-            $message = "Du lyfter på " . strtolower($item->getDescription())
+            $message = "Du lyfter på " . strtolower($itemString)
             . " och hittar " . $coveredItem;
 
             foreach ($items as $i) {
@@ -102,7 +110,7 @@ class Actions
                     $coveredString = $coveredItem->getDescription();
                     $coveredItem->setGrab("yes");
                     $this->itemsRepository->save($coveredItem, true);
-                    $message = "Du lyfter på " . strtolower($item->getDescription())
+                    $message = "Du lyfter på " . strtolower($itemString)
                     . " och hittar " . strtolower($coveredString);
                 }
             }
@@ -165,10 +173,12 @@ class Actions
      * Function for getting item user is referencing and checking if it exists in room
      * @param string $command User command
      * @param array<Items> $items Items in room
+     * @return array{Items,bool}
      */
     public function getItemAndItemInItems($command, $items): array
     {
         $item = array_slice(explode(' ', $command), -1)[0];
+        $newItem = new Items();
         $itemInItems = false;
         $itemsLength = count((array)$items);
 
@@ -176,12 +186,12 @@ class Actions
             /** @var string $itemString */
             $itemString = $items[$i]->getItemName();
             if(strtolower($itemString) == $item) {
-                $item = $items[$i];
+                $newItem = $items[$i];
                 $itemInItems = true;
             }
         }
 
-        return array($item, $itemInItems);
+        return array($newItem, $itemInItems);
     }
 
     /**

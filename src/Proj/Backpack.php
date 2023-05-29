@@ -10,7 +10,7 @@ use App\Entity\Items;
 class Backpack
 {
     /**
-     * @var array<Items> $items in backpack
+     * @var array<Items|string> $items in backpack
      */
     protected array $items;
 
@@ -24,7 +24,7 @@ class Backpack
 
     /**
      * Add item to backpack
-     * @param Items $item Item to add
+     * @param Items|string $item Item to add
      */
     public function add($item): void
     {
@@ -49,7 +49,7 @@ class Backpack
 
     /**
      * Get items in backpack
-     * @return array<Items>
+     * @return array<Items|string>
      */
     public function getItems(): array
     {

@@ -127,7 +127,7 @@ class ActionsTest extends TestCase
         $rooms->method('getId')
         ->willReturn(2);
 
-        $items = $this->createMock(Items::Class);
+        $items = $this->createMock(Items::class);
         $items->method('getItemName')
         ->willReturn("Trädgårdstomte");
 
@@ -161,7 +161,7 @@ class ActionsTest extends TestCase
         $backpack->method('getItems')
         ->willReturn(array("Flaska"));
 
-        $items = $this->createMock(Items::Class);
+        $items = $this->createMock(Items::class);
         $items->method('getItemName')
         ->willReturn("Flaska");
 
@@ -195,7 +195,7 @@ class ActionsTest extends TestCase
         $backpack->method('getItems')
         ->willReturn(array("Nyckel"));
 
-        $items = $this->createMock(Items::Class);
+        $items = $this->createMock(Items::class);
         $items->method('getItemName')
         ->willReturn("Kista");
 
@@ -234,7 +234,7 @@ class ActionsTest extends TestCase
         $rooms->method('getNorth')
         ->willReturn(2);
 
-        $items = $this->createMock(Items::Class);
+        $items = $this->createMock(Items::class);
         $items->method('getItemName')
         ->willReturn("Flaska");
 

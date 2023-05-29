@@ -30,11 +30,11 @@ class Room
     {
         $message = "";
         $direction = $room->getNorth();
-        if ($room->getNLock() != null && !in_array($room->getNLock(), $backpack->getItems())) {
+        if ($room->getNLock() !== null && !in_array($room->getNLock(), $backpack->getItems())) {
             $message = "Den här vägen är låst, hitta rätt föremål";
             $direction = $room->getId();
             return array($message, $direction);
-        } elseif ($room->getNLock() != null && in_array($room->getNLock(), $backpack->getItems())) {
+        } elseif ($room->getNLock() !== null && in_array($room->getNLock(), $backpack->getItems())) {
             $message = "";
             $direction = $room->getNorth();
             $room->setNLock(null);
@@ -56,11 +56,11 @@ class Room
         $message = "";
         $direction = $room->getEast();
 
-        if ($room->getELock() != null && !in_array($room->getELock(), $backpack->getItems())) {
+        if ($room->getELock() !== null && !in_array($room->getELock(), $backpack->getItems())) {
             $message = "Den här vägen är låst, hitta rätt föremål";
             $direction = $room->getId();
             return array($message, $direction);
-        } elseif ($room->getELock() != null && in_array($room->getELock(), $backpack->getItems())) {
+        } elseif ($room->getELock() !== null && in_array($room->getELock(), $backpack->getItems())) {
             $message = "";
             $direction = $room->getEast();
             $room->setELock(null);
@@ -82,11 +82,11 @@ class Room
         $message = "";
         $direction = $room->getSouth();
 
-        if ($room->getSLock() != null && !in_array($room->getSLock(), $backpack->getItems())) {
+        if ($room->getSLock() !== null && !in_array($room->getSLock(), $backpack->getItems())) {
             $message = "Den här vägen är låst, hitta rätt föremål";
             $direction = $room->getId();
             return array($message, $direction);
-        } elseif ($room->getSLock() != null && in_array($room->getSLock(), $backpack->getItems())) {
+        } elseif ($room->getSLock() !== null && in_array($room->getSLock(), $backpack->getItems())) {
             $message = "";
             $direction = $room->getSouth();
             $room->setSLock(null);
@@ -108,11 +108,11 @@ class Room
         $message = "";
         $direction = $room->getWest();
 
-        if ($room->getWLock() != null && !in_array($room->getWLock(), $backpack->getItems())) {
+        if ($room->getWLock() !== null && !in_array($room->getWLock(), $backpack->getItems())) {
             $message = "Den här vägen är låst, hitta rätt föremål";
             $direction = $room->getId();
             return array($message, $direction);
-        } elseif ($room->getWLock() != null && in_array($room->getWLock(), $backpack->getItems())) {
+        } elseif ($room->getWLock() !== null && in_array($room->getWLock(), $backpack->getItems())) {
             $message = "";
             $direction = $room->getWest();
             $room->setWLock(null);

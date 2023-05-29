@@ -113,9 +113,7 @@ class ProjectController extends AbstractController
         ->findAll();
 
         if ($request->request->get('command') != null) {
-            /**
-             * @var string $command What user has written
-             */
+            /** @var string $command What user has written */
             $command = $request->request->get('command');
 
             $actions = new Actions($entityManager);
