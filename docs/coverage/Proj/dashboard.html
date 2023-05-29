@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /home/meljoh/dbwebb-kurser/mvc/me/report/src/Entity</title>
+  <title>Dashboard for /home/meljoh/dbwebb-kurser/mvc/me/report/src/Proj</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../_css/bootstrap.min.css?v=9.2.26" rel="stylesheet" type="text/css">
   <link href="../_css/nv.d3.min.css?v=9.2.26" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
       <nav aria-label="breadcrumb">
        <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="../index.html">/home/meljoh/dbwebb-kurser/mvc/me/report/src</a></li>
-         <li class="breadcrumb-item"><a href="index.html">Entity</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Proj</a></li>
          <li class="breadcrumb-item active">(Dashboard)</li>
 
        </ol>
@@ -173,7 +173,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,52], "Method Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,16], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -223,7 +223,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,9,"<a href=\"Book.php.html#8\">App\\Entity\\Book<\/a>"],[100,20,"<a href=\"Items.php.html#12\">App\\Entity\\Items<\/a>"],[100,23,"<a href=\"Rooms.php.html#12\">App\\Entity\\Rooms<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,39,"<a href=\"Actions.php.html#17\">App\\Proj\\Actions<\/a>"],[100,5,"<a href=\"Backpack.php.html#10\">App\\Proj\\Backpack<\/a>"],[100,20,"<a href=\"Room.php.html#11\">App\\Proj\\Room<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -247,7 +247,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"Book.php.html#28\">App\\Entity\\Book::getId<\/a>"],[100,1,"<a href=\"Book.php.html#33\">App\\Entity\\Book::getTitle<\/a>"],[100,1,"<a href=\"Book.php.html#38\">App\\Entity\\Book::setTitle<\/a>"],[100,1,"<a href=\"Book.php.html#45\">App\\Entity\\Book::getIsbn<\/a>"],[100,1,"<a href=\"Book.php.html#50\">App\\Entity\\Book::setIsbn<\/a>"],[100,1,"<a href=\"Book.php.html#57\">App\\Entity\\Book::getAuthor<\/a>"],[100,1,"<a href=\"Book.php.html#62\">App\\Entity\\Book::setAuthor<\/a>"],[100,1,"<a href=\"Book.php.html#69\">App\\Entity\\Book::getImage<\/a>"],[100,1,"<a href=\"Book.php.html#74\">App\\Entity\\Book::setImage<\/a>"],[100,1,"<a href=\"Items.php.html#49\">App\\Entity\\Items::getItemId<\/a>"],[100,1,"<a href=\"Items.php.html#54\">App\\Entity\\Items::setItemId<\/a>"],[100,1,"<a href=\"Items.php.html#61\">App\\Entity\\Items::getItemName<\/a>"],[100,1,"<a href=\"Items.php.html#66\">App\\Entity\\Items::setItemName<\/a>"],[100,1,"<a href=\"Items.php.html#73\">App\\Entity\\Items::getDescription<\/a>"],[100,1,"<a href=\"Items.php.html#78\">App\\Entity\\Items::setDescription<\/a>"],[100,1,"<a href=\"Items.php.html#85\">App\\Entity\\Items::getUseDesc<\/a>"],[100,1,"<a href=\"Items.php.html#90\">App\\Entity\\Items::setUseDesc<\/a>"],[100,1,"<a href=\"Items.php.html#97\">App\\Entity\\Items::getRoomId<\/a>"],[100,1,"<a href=\"Items.php.html#102\">App\\Entity\\Items::setRoomId<\/a>"],[100,1,"<a href=\"Items.php.html#109\">App\\Entity\\Items::getGrab<\/a>"],[100,1,"<a href=\"Items.php.html#114\">App\\Entity\\Items::setGrab<\/a>"],[100,1,"<a href=\"Items.php.html#121\">App\\Entity\\Items::getLift<\/a>"],[100,1,"<a href=\"Items.php.html#126\">App\\Entity\\Items::setLift<\/a>"],[100,1,"<a href=\"Items.php.html#133\">App\\Entity\\Items::getHiddenUnder<\/a>"],[100,1,"<a href=\"Items.php.html#138\">App\\Entity\\Items::setHiddenUnder<\/a>"],[100,1,"<a href=\"Items.php.html#145\">App\\Entity\\Items::getUsable<\/a>"],[100,1,"<a href=\"Items.php.html#150\">App\\Entity\\Items::setUsable<\/a>"],[100,1,"<a href=\"Items.php.html#157\">App\\Entity\\Items::getLocked<\/a>"],[100,1,"<a href=\"Items.php.html#162\">App\\Entity\\Items::setLocked<\/a>"],[100,1,"<a href=\"Rooms.php.html#54\">App\\Entity\\Rooms::getId<\/a>"],[100,1,"<a href=\"Rooms.php.html#59\">App\\Entity\\Rooms::getRoomName<\/a>"],[100,1,"<a href=\"Rooms.php.html#64\">App\\Entity\\Rooms::setRoomName<\/a>"],[100,1,"<a href=\"Rooms.php.html#71\">App\\Entity\\Rooms::getDescription<\/a>"],[100,1,"<a href=\"Rooms.php.html#76\">App\\Entity\\Rooms::setDescription<\/a>"],[100,1,"<a href=\"Rooms.php.html#83\">App\\Entity\\Rooms::getNorth<\/a>"],[100,1,"<a href=\"Rooms.php.html#88\">App\\Entity\\Rooms::setNorth<\/a>"],[100,1,"<a href=\"Rooms.php.html#95\">App\\Entity\\Rooms::getEast<\/a>"],[100,1,"<a href=\"Rooms.php.html#100\">App\\Entity\\Rooms::setEast<\/a>"],[100,1,"<a href=\"Rooms.php.html#107\">App\\Entity\\Rooms::getSouth<\/a>"],[100,1,"<a href=\"Rooms.php.html#112\">App\\Entity\\Rooms::setSouth<\/a>"],[100,1,"<a href=\"Rooms.php.html#119\">App\\Entity\\Rooms::getWest<\/a>"],[100,1,"<a href=\"Rooms.php.html#124\">App\\Entity\\Rooms::setWest<\/a>"],[100,1,"<a href=\"Rooms.php.html#131\">App\\Entity\\Rooms::getImage<\/a>"],[100,1,"<a href=\"Rooms.php.html#136\">App\\Entity\\Rooms::setImage<\/a>"],[100,1,"<a href=\"Rooms.php.html#143\">App\\Entity\\Rooms::getNLock<\/a>"],[100,1,"<a href=\"Rooms.php.html#148\">App\\Entity\\Rooms::setNLock<\/a>"],[100,1,"<a href=\"Rooms.php.html#155\">App\\Entity\\Rooms::getELock<\/a>"],[100,1,"<a href=\"Rooms.php.html#160\">App\\Entity\\Rooms::setELock<\/a>"],[100,1,"<a href=\"Rooms.php.html#167\">App\\Entity\\Rooms::getSLock<\/a>"],[100,1,"<a href=\"Rooms.php.html#172\">App\\Entity\\Rooms::setSLock<\/a>"],[100,1,"<a href=\"Rooms.php.html#179\">App\\Entity\\Rooms::getWLock<\/a>"],[100,1,"<a href=\"Rooms.php.html#184\">App\\Entity\\Rooms::setWLock<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"Actions.php.html#23\">App\\Proj\\Actions::__construct<\/a>"],[100,9,"<a href=\"Actions.php.html#37\">App\\Proj\\Actions::go<\/a>"],[100,5,"<a href=\"Actions.php.html#65\">App\\Proj\\Actions::grab<\/a>"],[100,6,"<a href=\"Actions.php.html#88\">App\\Proj\\Actions::lift<\/a>"],[100,4,"<a href=\"Actions.php.html#121\">App\\Proj\\Actions::use<\/a>"],[100,5,"<a href=\"Actions.php.html#140\">App\\Proj\\Actions::open<\/a>"],[100,3,"<a href=\"Actions.php.html#169\">App\\Proj\\Actions::getItemAndItemInItems<\/a>"],[100,6,"<a href=\"Actions.php.html#196\">App\\Proj\\Actions::checkAction<\/a>"],[100,1,"<a href=\"Backpack.php.html#20\">App\\Proj\\Backpack::__construct<\/a>"],[100,1,"<a href=\"Backpack.php.html#29\">App\\Proj\\Backpack::add<\/a>"],[100,2,"<a href=\"Backpack.php.html#38\">App\\Proj\\Backpack::remove<\/a>"],[100,1,"<a href=\"Backpack.php.html#54\">App\\Proj\\Backpack::getItems<\/a>"],[100,5,"<a href=\"Room.php.html#29\">App\\Proj\\Room::checkIfLockedNorth<\/a>"],[100,5,"<a href=\"Room.php.html#54\">App\\Proj\\Room::checkIfLockedEast<\/a>"],[100,5,"<a href=\"Room.php.html#80\">App\\Proj\\Room::checkIfLockedSouth<\/a>"],[100,5,"<a href=\"Room.php.html#106\">App\\Proj\\Room::checkIfLockedWest<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);
