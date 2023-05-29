@@ -1,0 +1,47 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Äventyrsspel{% endblock %}
+
+{% block body %}
+    {% if message == "Du låser upp kistan" %}
+    <div class="container mt-n5">
+        <div class="row">
+            <div class="mt-n1">
+            {# <img src="{{ asset('img/rum1.png') }}" alt="Room  1" width="1000"> #}
+            <img src="../{{ room.image }}" alt="Room" width="1000">
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-lg-10 mt-2">
+                <p>{{ message }}</p>
+                <p>I kistan finns en mask och en machete du tycker dig känna igen från någonstans...
+                Grattis, du har hittat skatten och klarat spelet!</p>
+            </div>
+    {% else %}
+    {# {% if room_number == 1 %} #}
+    <div class="container mt-n5">
+        <div class="row">
+            <div class="mt-n1">
+            {# <img src="{{ asset('img/rum1.png') }}" alt="Room  1" width="1000"> #}
+            <img src="../{{ room.image }}" alt="Room" width="1000">
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-lg-10 mt-2">
+                <p>{{ room.description }}</p>
+                <p>{{ message }}</p>
+                <form method="post" action="">
+                    ><input type="text" name="command" id="command" autocomplete="off">
+                    <input type="submit" name="send_command" hidden> {# formtarget="_self" #}
+                </form>
+            </div>
+    {% endif %}
+            <div class="col-lg-2 mt-2 pl-2 border border-danger">
+                <p class="border-bottom">Ryggsäck</p>
+                {% for item in backpack %}
+                    <p class="mt-n3">{{ item }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

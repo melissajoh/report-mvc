@@ -1,0 +1,19 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Api{% endblock %}
+
+{% block body %}
+    <div class="container w-75">
+        <h1>JSON API</h1>
+        <p>Mitt JSON API består av fem routes.</p>
+        <p><a href="{{ path('backpack') }}">proj/api/backpack</a> Visar innehållet i spelarens ryggsäck.
+        Tom om spelet inte är igång/ryggsäcken är tom.</p>
+        <p><a href="{{ path('items') }}">proj/api/items</a> Visar alla föremål som finns i databasen, med
+        namn och beskrivning.</p>
+        <p><a href="{{ path('single_item', { 'id': 'bultsax1' }) }}">proj/api/items/{id}</a> Visar ett föremål med givet id.
+        Id är alltid föremålets namn i små bokstäver följt av 1 i detta fall.</p>
+        <p><a href="{{ path('rooms') }}">proj/api/rooms</a> Visar alla rum som finns i databasen, namn och beskrivning.</p>
+        <p><a href="{{ path('add') }}">proj/api/add</a> Lägger till ett testobjekt i databasens tabell items, om föremålet
+        inte redan har lagts till.</p>
+    </div>
+{% endblock %}

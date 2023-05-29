@@ -1,0 +1,15 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}Äventyrsspel{% endblock %}
+
+{% block body %}
+    <div class="container mt-4 w-50">
+        <h1>Välkommen till Äventyrsspelet</h1>
+        <p>Målet är att ta sig igenom rummen och fram till skatten.
+        För att ta dig framåt i spelet skriver du in något av följande kommandon;
+        gå, ta, lyft, använd, öppna. Följt av väderstreck (norr, syd, öst, väst) eller föremål.
+        </p>
+        <a href="{{ path('proj_game') }}" class="btn btn-dark btn-block mb-5">Starta spelet</a>
+        <a href="{{ path('proj_cheat') }}">Fusklapp</a>
+    </div>
+{% endblock %}
