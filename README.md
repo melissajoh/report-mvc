@@ -8,13 +8,25 @@ My `me/report` repo for mvc course at BTH with all of the courses assignments.
 1. Open a terminal
 2. Go to directory you want to clone repo to
 3. Run following commands:
-```git clone http://github.com/melissajoh/report-mvc```
-```cd report-mvc```
+```
+git clone http://github.com/melissajoh/report-mvc
+```
+```
+cd report-mvc
+```
 
 When you are in the correct folder (report-mvc), run the following commands:
-```composer install```
-```npm install```
-```npm run build```
+```
+composer install
+```
+```
+npm install
+```
+```
+npm run build
+```
 
 Now all the basics should be installed and you can start the server:
-```php -S locahost:8080 -t public```
+```
+php -S locahost:8080 -t public
+```
