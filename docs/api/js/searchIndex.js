@@ -431,11 +431,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-MainController.html#method_metrics"
         },                {
-            "fqsen": "\\App\\Controller\\MainController\u003A\u003Aproj\u0028\u0029",
-            "name": "proj",
-            "summary": "",
-            "url": "classes/App-Controller-MainController.html#method_proj"
-        },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
@@ -621,10 +616,10 @@ Search.appendIndex(
             "summary": "Controller\u0020for\u0020Adventure\u0020game\u0020Project",
             "url": "classes/App-Controller-ProjectController.html"
         },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojInit\u0028\u0029",
-            "name": "projInit",
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003Aproj\u0028\u0029",
+            "name": "proj",
             "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_projInit"
+            "url": "classes/App-Controller-ProjectController.html#method_proj"
         },                {
             "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojGame\u0028\u0029",
             "name": "projGame",
@@ -650,6 +645,11 @@ Search.appendIndex(
             "name": "projApi",
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_projApi"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojReset\u0028\u0029",
+            "name": "projReset",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projReset"
         },                {
             "fqsen": "\\App\\Controller\\ProjJsonController",
             "name": "ProjJsonController",
@@ -1065,6 +1065,16 @@ Search.appendIndex(
             "name": "roomClass",
             "summary": "",
             "url": "classes/App-Proj-Actions.html#property_roomClass"
+        },                {
+            "fqsen": "\\App\\Proj\\Actions\u003A\u003A\u0024itemsRepository",
+            "name": "itemsRepository",
+            "summary": "",
+            "url": "classes/App-Proj-Actions.html#property_itemsRepository"
+        },                {
+            "fqsen": "\\App\\Proj\\Actions\u003A\u003A\u0024roomsRepository",
+            "name": "roomsRepository",
+            "summary": "",
+            "url": "classes/App-Proj-Actions.html#property_roomsRepository"
         },                {
             "fqsen": "\\App\\Proj\\Backpack",
             "name": "Backpack",
