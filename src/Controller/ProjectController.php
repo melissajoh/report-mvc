@@ -52,35 +52,6 @@ class ProjectController extends AbstractController
         return $this->render('/proj/index.html.twig');
     }
 
-    // #[Route("/proj/init", name: "proj_init")]
-    // public function projInit(
-    //     SessionInterface $session,
-    //     RoomsRepository $roomsRepository,
-    //     ItemsRepository $itemsRepository,
-    // ): Response {
-    //     $session->set("room_number", 1);
-    //     $session->set("backpack", new Backpack());
-    //     $session->set("message", null);
-
-    //     /**
-    //      * @var Items $coveredItem Item that is hidden
-    //      */
-    //     $coveredItem = $itemsRepository
-    //     ->find("nyckel1");
-    //     $coveredItem->setGrab("no");
-    //     $itemsRepository->save($coveredItem, true);
-
-    //     /**
-    //      * @var Rooms $lockedWay Way to room that is locked
-    //      */
-    //     $lockedWay = $roomsRepository
-    //     ->find("2");
-    //     $lockedWay->setELock("Bultsax");
-    //     $roomsRepository->save($lockedWay, true);
-
-    //     return $this->redirectToRoute('proj_game');
-    // }
-
     #[Route("/proj/game", name: "proj_game", methods: ['GET', 'POST'])]
     public function projGame(
         Request $request,
@@ -139,29 +110,6 @@ class ProjectController extends AbstractController
         return $this->render('proj/game.html.twig', $data);
     }
 
-    // #[Route('/proj/add', name: 'proj_add', methods: ['GET', 'POST'])]
-    // public function addProj(
-    //     ManagerRegistry $doctrine,
-    //     Request $request
-    // ): Response {
-    //     $entityManager = $doctrine->getManager();
-
-
-    //     $item = new Items();
-    //     $item->setItemId("test1");
-    //     $item->setItemName("test");
-    //     $item->setDescription("test");
-    //     $item->setUseDesc("test");
-    //     $item->setRoomId(0);
-
-    //     $entityManager->persist($item);
-
-    //     $entityManager->flush();
-
-    //     return $this->redirectToRoute('proj');
-    //     // return $this->render('proj/add.html.twig');
-    // }
-
     #[Route("/proj/about", name: "proj_about")]
     public function projAbout(): Response
     {
@@ -186,27 +134,26 @@ class ProjectController extends AbstractController
         return $this->render('proj/api.html.twig');
     }
 
-    // #[Route("/proj/reset", name: "proj_reset")]
-    // public function projReset(
-    //     ManagerRegistry $doctrine
-    // ): Response
-    // {
-    //     /** @var Connection $connection */
-    //     $connection = $doctrine->getConnection();
+    #[Route("/proj/reset", name: "proj_reset")]
+    public function projReset(
+        ManagerRegistry $doctrine
+    ): Response {
+        $connection = $doctrine->getConnection();
 
-    //     $file = '../var/backup.sql';
-    //     $sql = '
-    //         DROP TABLE IF EXISTS product;
-    //         DROP TABLE IF EXISTS book;
-    //         DROP TABLE IF EXISTS rooms;
-    //         DROP TABLE IF EXISTS items;
-    //         DROP TABLE IF EXISTS doctrine_migration_versions;
-    //         DROP TABLE IF EXISTS messenger_messages;
-    //     ' . file_get_contents($file);
+        $file = dirname(__DIR__). '../../var/backup.sql';
+        $sql = '
+            DROP TABLE IF EXISTS product;
+            DROP TABLE IF EXISTS book;
+            DROP TABLE IF EXISTS rooms;
+            DROP TABLE IF EXISTS items;
+            DROP TABLE IF EXISTS doctrine_migration_versions;
+            DROP TABLE IF EXISTS messenger_messages;
+        ' . file_get_contents($file);
 
-    //     $connection->executeStatement($sql);
-    //     $doctrine->getManager()->flush();
+        /** @phpstan-ignore-next-line */
+        $connection->executeStatement($sql);
+        $doctrine->getManager()->flush();
 
-    //     return $this->redirectToRoute('proj');
-    // }
+        return $this->redirectToRoute('proj');
+    }
 }
