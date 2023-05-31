@@ -126,14 +126,14 @@ class ProjJsonController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         $item = $itemsRepository
-        ->find("test1");
+        ->find("item1");
 
         if (!$item) {
             $item = new Items();
-            $item->setItemId("test1");
-            $item->setItemName("test");
-            $item->setDescription("test");
-            $item->setUseDesc("test");
+            $item->setItemId("item1");
+            $item->setItemName("Item");
+            $item->setDescription("Det här är ett adderat föremål");
+            $item->setUseDesc("Ingenting händer");
             $item->setRoomId(0);
 
             $entityManager->persist($item);
