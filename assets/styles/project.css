@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 0, 0);
-    color: white;
+    color: rgb(240, 240, 240);
     font-family: 'VT323', 'Courier New', Courier, monospace;
     font-size: 1.2rem;
 }
@@ -23,7 +23,7 @@ nav {
 input {
     background-color:rgb(0, 0, 0);
     border: none;
-    color: white;
+    color: rgb(240, 240, 240);
     width: 90%;
 }
 
@@ -34,5 +34,13 @@ input:focus {
 
 footer {
     text-align: center;
-    color: darkred;
+    color: rgb(173, 4, 4);
+}
+
+a {
+    color: rgb(173, 4, 4);
+}
+
+a:hover {
+    color: red;
 }
