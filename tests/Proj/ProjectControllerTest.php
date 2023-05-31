@@ -3,21 +3,13 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Test cases for controller ProjectController
  */
 class ProjectControllerTest extends WebTestCase
 {
-    // public function testInitRoute(): void
-    // {
-    //     $client = static::createClient();
-
-    //     $client->request('GET', '/proj/init');
-
-    //     $this->assertResponseRedirects('/proj/game');
-    // }
-
     public function testProjRoute(): void
     {
         $client = static::createClient();
@@ -30,6 +22,12 @@ class ProjectControllerTest extends WebTestCase
     public function testGameRoute(): void
     {
         $client = static::createClient();
+
+        $client->followRedirects();
+        $crawler = $client->request('GET', '/proj/game');
+        $form = $crawler->selectButton('send_command')->form();
+        $form['command']->setValue('gå norr');
+        $client->submit($form);
 
         $client->request('GET', '/proj/game');
 
@@ -63,12 +61,26 @@ class ProjectControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    // public function testApiRoute(): void
-    // {
-    //     $client = static::createClient();
+    public function testApiRoute(): void
+    {
+        $client = static::createClient();
 
-    //     $client->request('GET', '/proj/api');
+        $client->request('GET', '/proj/api');
 
-    //     $this->assertResponseIsSuccessful();
-    // }
+        $this->assertResponseIsSuccessful();
+    }
+
+    public function testResetRoute(): void
+    {
+        $client = static::createClient();
+
+        // $conn = $this->createMock(Connection::class);
+        // $conn->method('executeStatement')
+        // ->willReturn(true);
+
+        $client->request('GET', '/proj/reset');
+
+        // $this->assertResponseIsSuccessful();
+        $this->assertResponseRedirects('/proj');
+    }
 }

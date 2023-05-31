@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Proj\Backpack;
+use App\Repository\ItemsRepository;
+use Doctrine\Persistence\ObjectRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
@@ -32,14 +34,23 @@ class ProjJsonControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    // public function testSingleItemsRoute(): void
-    // {
-    //     $client = static::createClient();
+    public function testSingleItemsRoute(): void
+    {
+        $client = static::createClient();
 
-    //     $client->request('GET', '/proj/api/items/{id}');
+        // $this->expectException(\ErrorException::class);
 
-    //     $this->assertResponseIsSuccessful();
-    // }
+        // $itemRep = $this->createMock(ObjectRepository::class);
+        // $itemRep->expects($this->any())
+        //     ->method('find')
+        //     ->willReturn(null);
+
+        // $this->assertEquals($e->getCode(), 404);
+
+        $client->request('GET', '/proj/api/items/flaska1');
+
+        $this->assertResponseIsSuccessful();
+    }
 
     public function testRoomsRoute(): void
     {
@@ -53,6 +64,11 @@ class ProjJsonControllerTest extends WebTestCase
     public function testAddRoute(): void
     {
         $client = static::createClient();
+
+        $itemRep = $this->createMock(ObjectRepository::class);
+        $itemRep->expects($this->any())
+            ->method('find')
+            ->willReturn(null);
 
         $client->request('GET', '/proj/api/add');
 
