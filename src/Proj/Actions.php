@@ -12,7 +12,7 @@ use App\Repository\ItemsRepository;
 
 /**
  * Actions for adventure game
-* @Entity
+ * @Entity
   */
 class Actions
 {
@@ -173,7 +173,7 @@ class Actions
      * Function for getting item user is referencing and checking if it exists in room
      * @param string $command User command
      * @param array<Items> $items Items in room
-     * @return array{Items,bool}
+     * @return array{0:Items,1:bool}
      */
     public function getItemAndItemInItems($command, $items): array
     {
