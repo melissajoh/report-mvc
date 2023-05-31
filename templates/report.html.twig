@@ -192,6 +192,7 @@ TIL för detta kursmoment är ett annat sätt att jobba med databaser, genom ORM
 </pre>
 
 <h2 id="kmom06">Kmom06</h2>
+<pre>
 PHPmetrics uppfattade jag inte som att det gav mig lika mycket som Scrutinizer 
 för just detta projekt. Jag hade 4 violations som jag inte lyckades klura ut 
 hur de skulle lösas. Resten av värdena tyckte jag var lite kluriga att få ut 
@@ -226,6 +227,182 @@ med oväntade saker.
 
 TIL för detta kursmoment är att använda PHPmetrics och Scrutinizer för att analysera 
 min kod och se vad som kan förbättras.
-
+</pre>
 <h2 id="kmom10">Kmom10</h2>
+<pre>
+<h3>REDOVISNINGSTEXT KMOM10/PROJEKT MVC</h3>
+Jag valde att arbeta med ett äventyrsspel och har försökt få till alla projektets 
+krav. Jag hade lite strul med sessioner på studentservern, men för mig fungerar 
+spelet som det ska om man antingen kör det i en inkognitoflik eller använder https://.
+
+<h4>KRAV</h4>
+<h5>Krav 1-3: Webbplats</h5>
+Jag började med att skapa en landningssida /proj som man kommer åt genom report-sidans 
+navbar. Väl där byts navbaren ut enligt krav och innehåller bara länkar relevanta 
+för projektet. Jag har gjort en egen stylesheet för projektet som används i en 
+proj_base.html.twig-fil, vilken är den som alla projektets template-filer “extendar” 
+från. Istället för den base.html.twig vi har använt oss av tidigare. Stilen har jag 
+tänkt mig lite 8-bit-spel, skräcktema med det mörka och röd text i footer och länkar. 
+Jag har även själv ritat bilderna för varje rum, anpassade till spelet.
+
+Det var lite klurigt att komma på hur jag skulle implementera styrningen av spelet. 
+I uppgiftsbeskrivningen står det “Varje gång man klickar på något…”. Men jag tänkte 
+att det var lite fritt att lösa spelets funktionalitet. Jag ville gärna att man skulle 
+kunna skriva in vad man vill göra, då det är så jag tänker mig denna typ av spel. Jag 
+funderade också på om jag skulle lägga fyra knappar som alternativ på vad man kunde 
+göra i rummet istället. Men sedan löste jag det genom ett formulär med gömd knapp. 
+Detta gör att sidan laddas om när formuläret skickas och det kan bli lite hoppigt. 
+Men det fungerar. Rutan där kommandot skrivs in använde jag “autofocus” på så markören 
+befinner sig där hela tiden. Sedan är det bara att skriva kommando och skicka med enter. 
+Bilderna ändras inte när ett föremål plockas upp, utan jag valde att ha stilla bilder och 
+istället berätta vad som sker i texten.
+
+Jag skapade tre nya klasser som jag använder mig av under src/Proj. Dessa är Actions, 
+Backpack och Room. Actions håller alla olika handlingar man kan utföra i spelet, 
+exempelvis “gå” och “ta”. Backpack håller de föremål spelaren plockar upp. Room är 
+lite special och håller just nu bara metoder för att kolla om ett rum är låst åt de 
+olika riktningarna. Resten av delarna som är relaterade till rum och föremål i rummen 
+finns i databasen och mycket av det hanteras i Actions-klassen. Jag skriver lite mer 
+om databasen under Krav 5.
+
+De handlingar som finns är  “gå”, “ta”, “använd”, “lyft” och “öppna”. Vissa föremål 
+går att plocka upp, andra går att lyfta, några går att använda och ett föremål att öppna. 
+Egentligen borde “öppna” kanske ha fungerat på den låsta väg som finns i spelet, men 
+just nu räcker det att man har rätt föremål med sig i ryggsäcken för att kunna gå igenom 
+den låsta vägen. Jag har heller inte gjort så att ett föremål försvinner från ryggsäcken 
+eller på något sätt uppdateras om det används, vilket skulle kunna vara en förbättring.
+
+Koden försökte jag skriva så “icke-hårdkodat” som möjligt och jag tror att det är möjligt 
+att lägga till fler rum utan allt för mycket jobb.
+
+Under proj/about har jag skrivit lite vilken projektidé jag valde, hur man spelar och 
+lite kort hur spelet är uppbyggt.
+
+Jag har använt mig av samma repo på github som vi haft under hela kursen. Där ligger en 
+README.md med alla badges och nu även en instruktion till hur man klonar repot. Det 
+fungerade för mig att köra de kommandon som jag skrivit ned, så jag hoppas att det är 
+rätt. Provade några gånger och en av gångerna fick jag ett error som jag sedan inte 
+fick fler gånger fast jag gjorde likadant, så jag är lite osäker. Scrutinizer, docs och 
+metrics innehåller alla me/report-filerna och inte enbart projektet. För att få upp 
+kodtäckningen lite exkluderade jag några av de filer som inte var relevanta för projektet, 
+som BookController och CardController – vilka jag inte lyckades testa. Tänkte att detta 
+var okej då det i uppgiftsbeskrivningen står “exkludera filer som inte är relevanta” och 
+dessa inte är relevanta för projektet just. Jag har fortfarande kvar till exempel 
+GameController vilken hör till kortspelet och alltså inte projektet, som bara har 53 % 
+i kodtäckning. Exkluderas även den, blir kodtäckningen lite högre. Men totalt ligger den 
+ändå på 92%.
+
+Jag skrev tester för alla nya filer, som ProjectController och filerna i mapperna 
+Entity och Repository, samt klass-filerna i min src/Proj. Jag lade även till ett par 
+tester till gamla filer som inte har med projektet att göra. Överlag gick det rätt bra 
+med testerna men jag fick använda en del mockning för att kunna testa koden.
+
+<h5>Krav 4: JSON API</h5>
+För JSON API:et skapade jag en route proj/api där det finns länkar till alla api-routes 
+och en kort förklaring om vad routen gör. Jag valde att göra 5 routes. En route som visar 
+spelarens ryggsäck, vilken är tom om spelet inte har startats alt ingenting har plockats 
+upp. Sedan finns en route som visar namn och beskrivning på alla rum och samma sak för 
+alla föremål. För föremålen har jag en till route som visar ett föremål baserat på dess 
+id. Den sista routen är en POST-route som lägger till ett föremål i “items”-tabellen, 
+förutsatt att föremålet inte redan har lagts till. Den routen lägger alltså bara till 
+ett föremål en gång, men går att testa flera gånger genom att gå till proj/reset vilket 
+är återställning av databasen.
+
+<h5>Krav 5: ORM</h5>
+Jag implementerade databas via ORM tidigt i projektet. Jag valde att använda samma 
+data.db-fil som genererades under tidigare kursmoment. Sedan har jag byggt databasen på 
+samma sätt, genom att köra `php bin/console make:entity`, skapa, köra och applicera 
+migrationer osv. Under proj/about/database finns närmare beskrivning av databasen, som 
+ER-diagram och svar på de frågor som finns under kravet.
+
+Databasen blev en central del i mitt spel, då jag använde den till att exempelvis se 
+vilka håll som går att gå från varje rum, se om någon väg är låst och vilket föremål 
+som isåfall behövs för att öppna rummet. Jag har alla föremål som är interagerbara i 
+en egen tabell, där plats föremålet finns på ligger i databasen – tillsammans med annan 
+information så som om föremålet går att plocka upp, om det är gömt och text som dyker 
+upp om man interagerar med föremålet.
+
+<h5>Krav 6: Avancerade features</h5>
+<b>Databastabeller:</b> Till en början fick jag klura en del på vad som skulle bli tabeller 
+i databasen och hur databasen skulle fungera tillsammans med egna klasser på ett bra 
+sätt. Jag satt och skrev ner och funderade mycket innan jag satte igång. Det var svårt 
+att tänka sig vad som kunde vara relevant information att ha i en databas för ett 
+sådant här spel som jag aldrig kodat förut. Först var det lite klurigt att tänka vilka 
+tabeller, ska rum vara en tabell eller vore det bättre att ha klasser som tar hand om 
+arje rum? Sedan när jag väl kommit fram till att rum och föremål bör vara tabeller, så 
+var det klurigt att tänka sig vad för kolumner som behövdes i varje tabell. Detta byggdes 
+på vartefter jag började koda, men till en början fanns de grundläggande delarna som id, 
+beskrivningar och antingen håll att gå eller rum ett föremål fanns i. Detta bör räknas 
+in i krav 6 då databas inte fanns med i baskraven.
+
+<b>Reset av databasen:</b> Jag hade också lite svårigheter med att återställa databasen. Under 
+databas-kursen jobbade vi ju med SQL-kod som placerades i filer och enkelt kunde köras 
+för att återbygga databasen. Här visste jag inte riktigt hur det skulle göras. Tillslut 
+lyckades jag skapa en proj/reset-route som återställer databasen till sitt ursprungsläge 
+(där alla delar som behövs för spelet finns men inte till exempel det item som lagt till 
+under proj/api/add). Detta genom tips jag hittade i discord-tråden för kursen och genom 
+att göra en “dump” av databasen vilket innebär att databasen läggs som SQL-kod i en fil. 
+Dock fick jag då errors i phpstan som ledde till ytterligare svårigheter. Detta bör 
+räknas i krav 6 då ingen sådan reset av databasen hade behövts om jag inte jobbat med 
+krav 5 om databas via ORM.
+
+<b>JSON API:</b> Det var också lite klurigt vilka routes jag skulle ha med för JSON API:et. 
+ärskilt en post-route. Jag tänkte att jag inte ville ha routes som till exempel tar bort 
+eller ändrar någonting av det som finns i databasen, då det är delar som behövs för 
+spelet. Tillslut skapade jag routes för att visa alla relevanta databas-delar, samt 
+ryggsäck och sedan en post-route som lägger till ett föremål en gång. Detta bör räknas 
+in i krav 6 då JSON API var ett optionellt krav.
+
+<b>Tester för controllers:</b> Jag försökte också testa mina controllers, vilket jag tänker 
+bör räknas in i krav 6 då vi inte har lärt oss att testa controllers och det mer är 
+en extragrej jag valt att göra. För just projektet har jag två nya controllers 
+ProjectController och ProjJsonController. I båda stötte jag på några saker som var 
+svåra att testa och tog tid att lösa. I ProjectController är det att testa med ett 
+inkommande request från formulär, samt att testa min reset-route då den inte ville 
+hitta filen jag använder där. Dessa lyckades jag dock lösa efter lite kämpande. 
+Det första problemet gav dock ett error i phpstan som jag inte lyckades lösa. I 
+ProjJsonController hade jag svårigheter att klura ut hur jag kunde mocka 
+ItemsRepository så den inte hittar något item. Detta löste sig för den ena routen 
+(proj/api/add), men för routen för “single_items” som även kastar ett exception 
+lyckades jag inte testa just den biten. Att jag provat att testa controllers i tidigare 
+kursmoment gjorde att resten av testerna gick ganska smidigt. De tester jag skrivit är 
+inte de mest innehållsrika, men de testar controllerna lite grann i alla fall. Jag 
+landade på 100 respektive 95.83 % kodtäckning för dessa tillslut.
+
+<h4>ALLMÄNT</h4>
+Projektet har gått helt okej att genomföra. Det var klurigt då jag valde att göra 
+ett äventyrsspel och inte har någon tidigare erfarenhet av att skapa ett sådant 
+spel. Till en början kändes allting svårt. Hur skulle styrningen av spelet gå till? 
+Vilka klasser behövde jag? Vad skulle finnas i databasen? Det kändes som att det 
+skulle bli väldigt svårt att utföra, men jag valde ändå projektidén då jag tyckte 
+att det lät absolut roligast. 
+
+Efter en vecka hade jag lyckats få till ett fungerande men väldigt litet spel. 
+Jag valde att jobba med bara tre rum då jag ville ha så lite delar att fokusera på 
+som möjligt till en början. Det gick förvånansvärt bra att skriva koden för spelet 
+(Controller och klasser) ändå, kanske för att jag hade tänkt igenom uppgiften ganska 
+mycket innan jag satte igång. Efter den första veckan började jag med tester och 
+insåg att mitt spel var svårt att testa, vilket gjorde att jag fick skriva om några 
+bitar – dock inte alls så mycket som jag först befarade. Så testerna gick ändå bra 
+att skriva.
+
+Jag hade en del errors i composer lint som jag också fick försöka lösa. Nu klagar 
+phpstan på tre errors som jag inte lyckades hitta en lösning på men jag hoppas att 
+det går att överse. Phpmd klagar också på ett par fel från tidigare kortspel och 
+ett fel om “ShortMethodName” trots att jag tagit med det namnet i konfigurationsfilen. 
+Annars går mina tester igenom och jag har fixat issues i Scrutinizer.
+
+Överlag kändes det som ett rimligt projekt för kursen. Det var bra att man hade 
+olika valmöjligheter och kunde göra det svårare eller lättare för sig själv med val 
+av projektidé. Jag kände spontant att äventyrsspelet nog var lite för svårt, men jag 
+kunde inte hålla mig från att prova. Jag hann ändå med projektet nästan på utsatt tid, 
+jag är en dag sen.
+
+<h4>KURSEN</h4>
+Kursen har varit bra. Genomgångarna med Mikael och en start på övningarna har 
+varit en bra början på varje kursmoment. Det har funnits bra föreläsningar varje 
+vecka och bra länkar att läsa vidare via. Jag är överlag nöjd med kursen och har 
+ingenting att klaga på. Skulle kunna rekommendera den. Betyg 8/10.
+
+</pre>
 {% endblock %}
