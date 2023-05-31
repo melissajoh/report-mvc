@@ -10,15 +10,6 @@ use App\Repository\RoomsRepository;
  */
 class Room
 {
-    // private ItemsRepository $itemsRepository;
-    // private RoomsRepository $roomsRepository;
-
-    // public function __construct(EntityManagerInterface $entityManager)
-    // {
-    //     $this->itemsRepository = $entityManager->getRepository(Items::class);
-    //     $this->roomsRepository = $entityManager->getRepository(Rooms::class);
-    // }
-
     /**
      * Check if north location is locked
      * @param Rooms $room Current room
