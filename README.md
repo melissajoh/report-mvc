@@ -28,5 +28,5 @@ npm run build
 
 Now all the basics should be installed and you can start the server:
 ```
-php -S locahost:8080 -t public
+php -S localhost:8080 -t public
 ```
