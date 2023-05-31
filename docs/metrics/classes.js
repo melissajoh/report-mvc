@@ -245,6 +245,241 @@ var classes = [
         "violations": {}
     },
     {
+        "name": "App\\Controller\\ProjJsonController",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "jsonBackpack",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "jsonItems",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "jsonSingleItem",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "jsonRooms",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "addItem",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 5,
+        "nbMethods": 5,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 5,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 10,
+        "ccn": 6,
+        "ccnMethodMax": 2,
+        "externals": [
+            "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "App\\Proj\\Backpack",
+            "Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Repository\\ItemsRepository",
+            "Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Repository\\ItemsRepository",
+            "Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Repository\\RoomsRepository",
+            "Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Doctrine\\Persistence\\ManagerRegistry",
+            "App\\Repository\\ItemsRepository",
+            "App\\Entity\\Items",
+            "Symfony\\Component\\HttpFoundation\\JsonResponse"
+        ],
+        "parents": [
+            "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"
+        ],
+        "implements": [],
+        "lcom": 5,
+        "length": 157,
+        "vocabulary": 37,
+        "volume": 817.88,
+        "difficulty": 11.13,
+        "effort": 9102.26,
+        "level": 0.09,
+        "bugs": 0.27,
+        "time": 506,
+        "intelligentContent": 73.49,
+        "number_operators": 42,
+        "number_operands": 115,
+        "number_operators_unique": 6,
+        "number_operands_unique": 31,
+        "cloc": 9,
+        "loc": 79,
+        "lloc": 70,
+        "mi": 63.52,
+        "mIwoC": 38.55,
+        "commentWeight": 24.97,
+        "kanDefect": 0.82,
+        "relativeStructuralComplexity": 361,
+        "relativeDataComplexity": 0.32,
+        "relativeSystemComplexity": 361.32,
+        "totalStructuralComplexity": 1805,
+        "totalDataComplexity": 1.6,
+        "totalSystemComplexity": 1806.6,
+        "package": "App\\Controller\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 9,
+        "instability": 1,
+        "violations": {}
+    },
+    {
+        "name": "App\\Controller\\ProjectController",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "proj",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "projGame",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "projAbout",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "projDatabase",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "projCheat",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "projApi",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "projReset",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 7,
+        "nbMethods": 7,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 7,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 10,
+        "ccn": 4,
+        "ccnMethodMax": 4,
+        "externals": [
+            "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "App\\Repository\\RoomsRepository",
+            "App\\Repository\\ItemsRepository",
+            "App\\Proj\\Backpack",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Request",
+            "Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "App\\Repository\\RoomsRepository",
+            "App\\Repository\\ItemsRepository",
+            "Doctrine\\ORM\\EntityManagerInterface",
+            "App\\Proj\\Backpack",
+            "App\\Proj\\Actions",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "Doctrine\\Persistence\\ManagerRegistry"
+        ],
+        "parents": [
+            "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"
+        ],
+        "implements": [],
+        "lcom": 2,
+        "length": 170,
+        "vocabulary": 61,
+        "volume": 1008.23,
+        "difficulty": 7.58,
+        "effort": 7644.18,
+        "level": 0.13,
+        "bugs": 0.34,
+        "time": 425,
+        "intelligentContent": 132.98,
+        "number_operators": 31,
+        "number_operands": 139,
+        "number_operators_unique": 6,
+        "number_operands_unique": 55,
+        "cloc": 22,
+        "loc": 97,
+        "lloc": 75,
+        "mi": 71.16,
+        "mIwoC": 37.53,
+        "commentWeight": 33.63,
+        "kanDefect": 0.36,
+        "relativeStructuralComplexity": 256,
+        "relativeDataComplexity": 0.49,
+        "relativeSystemComplexity": 256.49,
+        "totalStructuralComplexity": 1792,
+        "totalDataComplexity": 3.41,
+        "totalSystemComplexity": 1795.41,
+        "package": "App\\Controller\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 10,
+        "instability": 1,
+        "violations": {}
+    },
+    {
         "name": "App\\Controller\\GameController",
         "interface": false,
         "abstract": false,
@@ -650,6 +885,279 @@ var classes = [
         "violations": {}
     },
     {
+        "name": "App\\Proj\\Actions",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "go",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "grab",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "lift",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "use",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "open",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getItemAndItemInItems",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "checkAction",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 8,
+        "nbMethods": 8,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 8,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 39,
+        "ccn": 32,
+        "ccnMethodMax": 9,
+        "externals": [
+            "Doctrine\\ORM\\EntityManagerInterface",
+            "App\\Proj\\Room",
+            "App\\Entity\\Items"
+        ],
+        "parents": [],
+        "implements": [],
+        "lcom": 1,
+        "length": 357,
+        "vocabulary": 54,
+        "volume": 2054.49,
+        "difficulty": 29.2,
+        "effort": 60000.59,
+        "level": 0.03,
+        "bugs": 0.68,
+        "time": 3333,
+        "intelligentContent": 70.35,
+        "number_operators": 100,
+        "number_operands": 257,
+        "number_operators_unique": 10,
+        "number_operands_unique": 44,
+        "cloc": 68,
+        "loc": 186,
+        "lloc": 118,
+        "mi": 67.58,
+        "mIwoC": 27.3,
+        "commentWeight": 40.28,
+        "kanDefect": 1.24,
+        "relativeStructuralComplexity": 1024,
+        "relativeDataComplexity": 0.47,
+        "relativeSystemComplexity": 1024.47,
+        "totalStructuralComplexity": 8192,
+        "totalDataComplexity": 3.73,
+        "totalSystemComplexity": 8195.73,
+        "package": "App\\Proj\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 1,
+        "efferentCoupling": 3,
+        "instability": 0.75,
+        "violations": {}
+    },
+    {
+        "name": "App\\Proj\\Backpack",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "add",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "remove",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getItems",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 4,
+        "nbMethods": 3,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 3,
+        "nbMethodsGetter": 1,
+        "nbMethodsSetters": 0,
+        "wmc": 4,
+        "ccn": 2,
+        "ccnMethodMax": 2,
+        "externals": [],
+        "parents": [],
+        "implements": [],
+        "lcom": 1,
+        "length": 14,
+        "vocabulary": 5,
+        "volume": 32.51,
+        "difficulty": 3.67,
+        "effort": 119.19,
+        "level": 0.27,
+        "bugs": 0.01,
+        "time": 7,
+        "intelligentContent": 8.87,
+        "number_operators": 3,
+        "number_operands": 11,
+        "number_operators_unique": 2,
+        "number_operands_unique": 3,
+        "cloc": 21,
+        "loc": 44,
+        "lloc": 23,
+        "mi": 103.31,
+        "mIwoC": 59.44,
+        "commentWeight": 43.87,
+        "kanDefect": 0.38,
+        "relativeStructuralComplexity": 0,
+        "relativeDataComplexity": 1.5,
+        "relativeSystemComplexity": 1.5,
+        "totalStructuralComplexity": 0,
+        "totalDataComplexity": 6,
+        "totalSystemComplexity": 6,
+        "package": "App\\Proj\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 2,
+        "efferentCoupling": 0,
+        "instability": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Proj\\Room",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "checkIfLockedNorth",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "checkIfLockedEast",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "checkIfLockedSouth",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "checkIfLockedWest",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 4,
+        "nbMethods": 4,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 4,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 20,
+        "ccn": 17,
+        "ccnMethodMax": 5,
+        "externals": [],
+        "parents": [],
+        "implements": [],
+        "lcom": 4,
+        "length": 176,
+        "vocabulary": 12,
+        "volume": 630.95,
+        "difficulty": 42.86,
+        "effort": 27040.86,
+        "level": 0.02,
+        "bugs": 0.21,
+        "time": 1502,
+        "intelligentContent": 14.72,
+        "number_operators": 56,
+        "number_operands": 120,
+        "number_operators_unique": 5,
+        "number_operands_unique": 7,
+        "cloc": 31,
+        "loc": 103,
+        "lloc": 72,
+        "mi": 75.15,
+        "mIwoC": 37.59,
+        "commentWeight": 37.56,
+        "kanDefect": 0.43,
+        "relativeStructuralComplexity": 225,
+        "relativeDataComplexity": 0.94,
+        "relativeSystemComplexity": 225.94,
+        "totalStructuralComplexity": 900,
+        "totalDataComplexity": 3.75,
+        "totalSystemComplexity": 903.75,
+        "package": "App\\Proj\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 1,
+        "efferentCoupling": 0,
+        "instability": 0,
+        "violations": {}
+    },
+    {
         "name": "App\\Repository\\BookRepository",
         "interface": false,
         "abstract": false,
@@ -731,6 +1239,168 @@ var classes = [
         "violations": {}
     },
     {
+        "name": "App\\Repository\\RoomsRepository",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "save",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "remove",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 3,
+        "nbMethods": 3,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 3,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 5,
+        "ccn": 3,
+        "ccnMethodMax": 2,
+        "externals": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "Doctrine\\Persistence\\ManagerRegistry",
+            "App\\Entity\\Rooms",
+            "App\\Entity\\Rooms"
+        ],
+        "parents": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"
+        ],
+        "implements": [],
+        "lcom": 2,
+        "length": 16,
+        "vocabulary": 5,
+        "volume": 37.15,
+        "difficulty": 1.75,
+        "effort": 65.01,
+        "level": 0.57,
+        "bugs": 0.01,
+        "time": 4,
+        "intelligentContent": 21.23,
+        "number_operators": 2,
+        "number_operands": 14,
+        "number_operators_unique": 1,
+        "number_operands_unique": 4,
+        "cloc": 38,
+        "loc": 59,
+        "lloc": 22,
+        "mi": 106.66,
+        "mIwoC": 59.32,
+        "commentWeight": 47.34,
+        "kanDefect": 0.29,
+        "relativeStructuralComplexity": 25,
+        "relativeDataComplexity": 0.28,
+        "relativeSystemComplexity": 25.28,
+        "totalStructuralComplexity": 75,
+        "totalDataComplexity": 0.83,
+        "totalSystemComplexity": 75.83,
+        "package": "App\\Repository\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 2,
+        "efferentCoupling": 3,
+        "instability": 0.6,
+        "violations": {}
+    },
+    {
+        "name": "App\\Repository\\ItemsRepository",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "save",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "remove",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 3,
+        "nbMethods": 3,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 3,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 5,
+        "ccn": 3,
+        "ccnMethodMax": 2,
+        "externals": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "Doctrine\\Persistence\\ManagerRegistry",
+            "App\\Entity\\Items",
+            "App\\Entity\\Items"
+        ],
+        "parents": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"
+        ],
+        "implements": [],
+        "lcom": 2,
+        "length": 16,
+        "vocabulary": 5,
+        "volume": 37.15,
+        "difficulty": 1.75,
+        "effort": 65.01,
+        "level": 0.57,
+        "bugs": 0.01,
+        "time": 4,
+        "intelligentContent": 21.23,
+        "number_operators": 2,
+        "number_operands": 14,
+        "number_operators_unique": 1,
+        "number_operands_unique": 4,
+        "cloc": 38,
+        "loc": 59,
+        "lloc": 22,
+        "mi": 106.66,
+        "mIwoC": 59.32,
+        "commentWeight": 47.34,
+        "kanDefect": 0.29,
+        "relativeStructuralComplexity": 25,
+        "relativeDataComplexity": 0.28,
+        "relativeSystemComplexity": 25.28,
+        "totalStructuralComplexity": 75,
+        "totalDataComplexity": 0.83,
+        "totalSystemComplexity": 75.83,
+        "package": "App\\Repository\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 2,
+        "efferentCoupling": 3,
+        "instability": 0.6,
+        "violations": {}
+    },
+    {
         "name": "App\\Card\\Card",
         "interface": false,
         "abstract": false,
@@ -805,7 +1475,7 @@ var classes = [
         "totalDataComplexity": 13,
         "totalSystemComplexity": 13,
         "package": "App\\Card\\",
-        "pageRank": 0.81,
+        "pageRank": 0.8,
         "afferentCoupling": 5,
         "efferentCoupling": 2,
         "instability": 0.29,
@@ -915,7 +1585,7 @@ var classes = [
         "totalDataComplexity": 8.6,
         "totalSystemComplexity": 136.6,
         "package": "App\\Card\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 3,
         "efferentCoupling": 2,
         "instability": 0.4,
@@ -986,7 +1656,7 @@ var classes = [
         "totalDataComplexity": 1,
         "totalSystemComplexity": 3,
         "package": "App\\Card\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 3,
         "efferentCoupling": 1,
         "instability": 0.25,
@@ -1251,7 +1921,7 @@ var classes = [
         "totalDataComplexity": 10.67,
         "totalSystemComplexity": 34.67,
         "package": "App\\Card\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 4,
         "efferentCoupling": 1,
         "instability": 0.2,
@@ -1356,6 +2026,159 @@ var classes = [
         "violations": {}
     },
     {
+        "name": "App\\Entity\\Items",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "getItemId",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setItemId",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getItemName",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setItemName",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getDescription",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setDescription",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getUseDesc",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setUseDesc",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getRoomId",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setRoomId",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getGrab",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setGrab",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getLift",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setLift",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getHiddenUnder",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setHiddenUnder",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getUsable",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setUsable",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getLocked",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setLocked",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 20,
+        "nbMethods": 0,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 0,
+        "nbMethodsGetter": 10,
+        "nbMethodsSetters": 10,
+        "wmc": 0,
+        "ccn": 1,
+        "ccnMethodMax": 0,
+        "externals": [],
+        "parents": [],
+        "implements": [],
+        "lcom": 0,
+        "length": 89,
+        "vocabulary": 14,
+        "volume": 338.85,
+        "difficulty": 4.92,
+        "effort": 1666.04,
+        "level": 0.2,
+        "bugs": 0.11,
+        "time": 93,
+        "intelligentContent": 68.92,
+        "number_operators": 30,
+        "number_operands": 59,
+        "number_operators_unique": 2,
+        "number_operands_unique": 12,
+        "cloc": 17,
+        "loc": 121,
+        "lloc": 104,
+        "mi": 65.58,
+        "mIwoC": 38.15,
+        "commentWeight": 27.43,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 0,
+        "relativeDataComplexity": 20.5,
+        "relativeSystemComplexity": 20.5,
+        "totalStructuralComplexity": 0,
+        "totalDataComplexity": 410,
+        "totalSystemComplexity": 410,
+        "package": "App\\Entity\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 3,
+        "efferentCoupling": 0,
+        "instability": 0,
+        "violations": {}
+    },
+    {
         "name": "App\\Entity\\Book",
         "interface": false,
         "abstract": false,
@@ -1447,8 +2270,176 @@ var classes = [
         "totalDataComplexity": 85,
         "totalSystemComplexity": 85,
         "package": "App\\Entity\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 2,
+        "efferentCoupling": 0,
+        "instability": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Entity\\Rooms",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "getId",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getRoomName",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setRoomName",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getDescription",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setDescription",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getNorth",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setNorth",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getEast",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setEast",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getSouth",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setSouth",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getWest",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setWest",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getImage",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setImage",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getNLock",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setNLock",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getELock",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setELock",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getSLock",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setSLock",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getWLock",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setWLock",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 23,
+        "nbMethods": 0,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 0,
+        "nbMethodsGetter": 12,
+        "nbMethodsSetters": 11,
+        "wmc": 0,
+        "ccn": 1,
+        "ccnMethodMax": 0,
+        "externals": [],
+        "parents": [],
+        "implements": [],
+        "lcom": 0,
+        "length": 97,
+        "vocabulary": 16,
+        "volume": 388,
+        "difficulty": 4.5,
+        "effort": 1746,
+        "level": 0.22,
+        "bugs": 0.13,
+        "time": 97,
+        "intelligentContent": 86.22,
+        "number_operators": 34,
+        "number_operands": 63,
+        "number_operators_unique": 2,
+        "number_operands_unique": 14,
+        "cloc": 19,
+        "loc": 138,
+        "lloc": 119,
+        "mi": 63.65,
+        "mIwoC": 36.46,
+        "commentWeight": 27.18,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 0,
+        "relativeDataComplexity": 23.48,
+        "relativeSystemComplexity": 23.48,
+        "totalStructuralComplexity": 0,
+        "totalDataComplexity": 540,
+        "totalSystemComplexity": 540,
+        "package": "App\\Entity\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 1,
         "efferentCoupling": 0,
         "instability": 0,
         "violations": {}
