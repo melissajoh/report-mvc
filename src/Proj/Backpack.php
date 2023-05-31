@@ -37,14 +37,9 @@ class Backpack
      */
     public function remove($item): void
     {
-        // $key = array_search($item, $this->items);
-        // if ($key) {
-        //     unset($this->items[$key]);
-        // }
         foreach (array_keys($this->items, $item) as $key) {
             unset($this->items[$key]);
         }
-        // unset($this->items[$item]);
     }
 
     /**
