@@ -1,5 +1,5 @@
 [![Build Status](https://scrutinizer-ci.com/g/melissajoh/report-mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/melissajoh/report-mvc/build-status/main)
-[![Code Coverage](https://scrutinizer-ci.com/g/melissajoh/report-mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/melissajoh/report-mvc/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/melissajoh/report-mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/melissajoh/report-mvc/code-structure/main/code-coverage)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/melissajoh/report-mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/melissajoh/report-mvc/?branch=main)
 
 My `me/report` repo for mvc course at BTH with all of the courses assignments.
