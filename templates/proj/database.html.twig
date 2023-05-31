@@ -5,30 +5,33 @@
 {% block body %}
     <div class="container w-75">
         <h1>Databas</h1>
-        <img src="">
+        <img src="{{ asset('img/er.png') }}">
         <p>rooms: Innehåller alla spelets rum, beskrivning av dessa och håll att gå därifrån.<br>
         items: Innehåller alla spelets föremål, beskrivning, attribut och vilka rum de finns i.</p>
         <p>Tabellerna är relaterade på så sätt att alla items har ett rums-id, dvs ett rum de
         finns i. FK i items är alltså id från rooms.</p>
         <p>Jag använde mig av SQLite då det kändes smidigast med tanke på att jag även använde
         den under tidigare kursmoment.</p>
-        <p>Gjorde jag enhetstester?</p>
-        <p>Berätta med egna ord (cirka 15 meningar) om hur du 
-        ser på fördelar, nackdelar, likheter och skillnader 
-        mellan ORM och det sätt vi jobbade med databasen i databaskursen.
-
+        <p>Jag testade de filer som genererades i samband med skapandet av databasen, dvs mappen
+        Entity och Repository. Det gick bra. Har 100% kodtäckning på båda mapparna i Scrutinizer.
+        Jag gjorde däremot inga andra direkta tester mot databasen.</p>
+        <p>
         Fördelarna med ORM är väl att det inte krävs att man skriver någon SQL-kod. Det är alltså
-        mindre mängd kod som behövs än så vi arbetade med databas tidigare. Man behöver alltså inte ha
+        mindre mängd kod som behövs än så vi arbetade med databas tidigare. Man behöver inte ha
         kunskap om hur man skriver SQL och så sätt är det enklare att använda. Att inte skriva SQL-kod
         kan också kännas som en nackdel då jag tyckte att det var lite klurigare att styra databasinnehållet
         exakt. Dvs till exempel lägga till främmande nycklar. Att skriva all SQL-kod själv gör också hela
         återställningen av databasen lite smidigare. Känns det som i alla fall, men det kanske är för att
-        jag känner mig mer van vid det sättet. Nu har jag en backup-fil av databasen, men den körs ingenstans.
-        Jag lyckades inte riktigt få till det och eftersom det inte stod listat som ett krav för projektet lade
-        jag inte all min tid på att lösa det. Det känns på något sätt lite smidigare att fylla databas-tabellerna
-        med innehåll genom att skriva sin egen SQL-kod eller i terminalen köra en "insert"-sats än att göra det
-        via en route.</p>
+        jag känner mig mer van vid det sättet. Nu lyckades jag göra en backup-fil med SQL-kod av databasen
+        mha kommandot ".dump" i terminalen. Sedan körs filen i en route proj/reset och återställer databasen.</p>
+
+        <p>Att fylla databas-tabellerna med innehåll tyckte jag kändes lite konstigt att göra via en route.
+        Jag tycker det känns smidigare att till exempel köra en insert-sats i terminalen. Men återigen, om
+        man inte kan någon SQL så är det första en enklare väg.</p>
+
         <p>Likheter är väl att databasen blir likadana oavsett tillvägagångssätt och kan användas till samma
-        saker. Största skillnaderna</p>
+        saker. Största skillnaderna är väl just att det ena sättet kräver mer kodskrivande och det andra lite
+        mindre. Det var ganska skönt att slippa skriva all kod för att skapa tabellerna och bara göra det snabbt
+        i terminalen.</p>
     </div>
 {% endblock %}
